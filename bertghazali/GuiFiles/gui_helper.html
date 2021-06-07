@@ -1,0 +1,822 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.9.2" />
+<title>bertghazali.GuiFiles.gui_helper API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+<style>.homelink{display:block;font-size:2em;font-weight:bold;color:#555;padding-bottom:.5em;border-bottom:1px solid silver}.homelink:hover{color:inherit}.homelink img{max-width:20%;max-height:5em;margin:auto;margin-bottom:.3em}</style>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>bertghazali.GuiFiles.gui_helper</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">from time import time, localtime, strftime
+
+try:
+    import Tkinter as tk
+except ImportError:
+    import tkinter as tk
+
+try:
+    import ttk
+
+    py3 = False
+except ImportError:
+    import tkinter.ttk as ttk
+
+    py3 = True
+
+
+def on_key_release_apply_defaults(event):
+    r&#34;&#34;&#34;
+    Changes border of widget(Entry) to black.
+
+    :param event: Generated from bind function
+    &#34;&#34;&#34;
+    event.widget.configure(highlightbackground=&#34;#d9d9d9&#34;)
+    event.widget.configure(highlightcolor=&#34;black&#34;)
+
+
+def entry_widget_defaults(widget):
+    r&#34;&#34;&#34;
+    Configures default parameters for styling and actions for Entry widget.
+
+    :param widget: The Entry widget (tkinter)
+    &#34;&#34;&#34;
+    widget.configure(background=&#34;white&#34;)
+    widget.configure(font=&#34;-family {Segoe UI} -size 11&#34;)
+    widget.configure(foreground=&#34;#808080&#34;)
+    widget.configure(highlightbackground=&#34;#d9d9d9&#34;)
+    widget.configure(highlightcolor=&#34;black&#34;)
+    widget.configure(highlightthickness=1)
+    widget.configure(insertbackground=&#34;black&#34;)
+    widget.configure(selectbackground=&#34;blue&#34;)
+    widget.configure(selectforeground=&#34;white&#34;)
+    widget.bind(&#34;&lt;KeyRelease&gt;&#34;, on_key_release_apply_defaults)
+
+
+def big_button_style(button, text):
+    &#34;&#34;&#34;
+    Configures the style and text of the big buttons.
+    :param button: A tkinter Button widget.
+    :param text: The text to show on button.
+    &#34;&#34;&#34;
+    button.configure(activebackground=&#34;#ececec&#34;)
+    button.configure(activeforeground=&#34;#000000&#34;)
+    button.configure(background=&#34;#629b1c&#34;)
+    button.configure(disabledforeground=&#34;#a3a3a3&#34;)
+    button.configure(font=&#34;-family {Segoe UI} -size 14 -weight bold&#34;)
+    button.configure(foreground=&#34;#ffffff&#34;)
+    button.configure(highlightbackground=&#34;#d9d9d9&#34;)
+    button.configure(highlightcolor=&#34;black&#34;)
+    button.configure(pady=&#34;0&#34;)
+    button.configure(text=f&#39;&#39;&#39;{text}&#39;&#39;&#39;)
+
+
+def tooltip_message(widget, message):
+    r&#34;&#34;&#34;
+    Attaches ToolTip box to the widget (tkinter), with proper message.
+
+    :param widget: Any tkinter widget to attach ToolTip to.
+    :param message: The message to be shown while mouse points on widget.
+    &#34;&#34;&#34;
+    ToolTip(widget, &#34;-family {Segoe UI} -size 11&#34;, message)
+
+
+def isint_and_inrange(n, start, end):
+    &#34;&#34;&#34;
+    Checks if parameter is int and in range (start,end).
+    :param n: the checked parameter.
+    :param start: the start number of the range.
+    :param end: the end number of the range.
+    :return: True if parameter is int and in the given range, else False.
+    &#34;&#34;&#34;
+    x = False
+    try:
+        int(n)
+        x = True if start &lt;= int(n) &lt;= end else False
+        return x
+    except ValueError:
+        return x
+
+
+def isfloat_and_inrange(n, start, end):
+    &#34;&#34;&#34;
+    Checks if parameter is float and in range (start,end).
+    :param n: the checked parameter.
+    :param start: the start number of the range.
+    :param end: the end number of the range.
+    :return: True if parameter is float and in the given range, else False.
+    &#34;&#34;&#34;
+    x = False
+    try:
+        float(n)
+        x = True if start &lt; float(n) &lt; end else False
+        return x
+    except ValueError:
+        return x
+
+
+def isfloat(s):
+    &#34;&#34;&#34;
+    Checks if parameter is float.
+    :param s: the checked parameter.
+    :return: True if value is float, else False.
+    &#34;&#34;&#34;
+    try:
+        float(s)
+        return True
+    except ValueError:
+        return False
+
+
+def isint(s):
+    &#34;&#34;&#34;
+        Checks if parameter is int.
+        :param s: the checked parameter.
+        :return: True if value is int, else False.
+        &#34;&#34;&#34;
+    try:
+        int(s)
+        return True
+    except ValueError:
+        return False
+
+
+# ===========================================================
+#                   Start Class ToolTip
+# ===========================================================
+
+class ToolTip(tk.Toplevel):
+    r&#34;&#34;&#34;
+        Provides a ToolTip widget for Tkinter.
+        To apply a ToolTip to any Tkinter widget, simply pass the widget to the
+        ToolTip constructor
+    &#34;&#34;&#34;
+
+    def __init__(self, wdgt, tooltip_font, msg=None, msgFunc=None,
+                 delay=0.1, follow=True):
+        &#34;&#34;&#34;
+        Initialize the ToolTip
+
+        Arguments:
+          wdgt: The widget this ToolTip is assigned to
+          tooltip_font: Font to be used
+          msg:  A static string message assigned to the ToolTip
+          msgFunc: A function that retrieves a string to use as the ToolTip text
+          delay:   The delay in seconds before the ToolTip appears(may be float)
+          follow:  If True, the ToolTip follows motion, otherwise hides
+        &#34;&#34;&#34;
+        self.wdgt = wdgt
+        # The parent of the ToolTip is the parent of the ToolTips widget
+        self.parent = self.wdgt.master
+        # Initalise the Toplevel
+        tk.Toplevel.__init__(self, self.parent, bg=&#39;black&#39;, padx=1, pady=1)
+        # Hide initially
+        self.withdraw()
+        # The ToolTip Toplevel should have no frame or title bar
+        self.overrideredirect(True)
+
+        # The msgVar will contain the text displayed by the ToolTip
+        self.msgVar = tk.StringVar()
+        if msg is None:
+            self.msgVar.set(&#39;No message provided&#39;)
+        else:
+            self.msgVar.set(msg)
+        self.msgFunc = msgFunc
+        self.delay = delay
+        self.follow = follow
+        self.visible = 0
+        self.lastMotion = 0
+        # The text of the ToolTip is displayed in a Message widget
+        tk.Message(self, textvariable=self.msgVar, bg=&#39;#E5EBD8&#39;,
+                   font=tooltip_font,
+                   aspect=1000).grid()
+
+        # Add bindings to the widget.  This will NOT override
+        # bindings that the widget already has
+        self.wdgt.bind(&#39;&lt;Enter&gt;&#39;, self.spawn, &#39;+&#39;)
+        self.wdgt.bind(&#39;&lt;Leave&gt;&#39;, self.hide, &#39;+&#39;)
+        self.wdgt.bind(&#39;&lt;Motion&gt;&#39;, self.move, &#39;+&#39;)
+
+    def spawn(self, event=None):
+        &#34;&#34;&#34;
+        Spawn the ToolTip.  This simply makes the ToolTip eligible for display.
+        Usually this is caused by entering the widget
+
+        Arguments:
+          event: The event that called this funciton
+        &#34;&#34;&#34;
+        self.visible = 1
+        # The after function takes a time argument in milliseconds
+        self.after(int(self.delay * 1000), self.show)
+
+    def show(self):
+        &#34;&#34;&#34;
+        Displays the ToolTip if the time delay has been long enough
+        &#34;&#34;&#34;
+        if self.visible == 1 and time() - self.lastMotion &gt; self.delay:
+            self.visible = 2
+        if self.visible == 2:
+            self.deiconify()
+
+    def move(self, event):
+        &#34;&#34;&#34;
+        Processes motion within the widget.
+        Arguments:
+          event: The event that called this function
+        &#34;&#34;&#34;
+        self.lastMotion = time()
+        # If the follow flag is not set, motion within the
+        # widget will make the ToolTip disappear
+        #
+        if self.follow is False:
+            self.withdraw()
+            self.visible = 1
+
+        # Offset the ToolTip 10x10 pixes southwest of the pointer
+        self.geometry(&#39;+%i+%i&#39; % (event.x_root + 20, event.y_root - 10))
+        try:
+            # Try to call the message function.  Will not change
+            # the message if the message function is None or
+            # the message function fails
+            self.msgVar.set(self.msgFunc())
+        except:
+            pass
+        self.after(int(self.delay * 1000), self.show)
+
+    def hide(self, event=None):
+        &#34;&#34;&#34;
+        Hides the ToolTip.  Usually this is caused by leaving the widget
+        Arguments:
+          event: The event that called this function
+        &#34;&#34;&#34;
+        self.visible = 0
+        self.withdraw()
+
+    def update(self, msg):
+        &#34;&#34;&#34;
+        Updates the Tooltip with a new message. Added by Rozen
+        &#34;&#34;&#34;
+        self.msgVar.set(msg)
+
+# ===========================================================
+#                   End of Class ToolTip
+# ===========================================================</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="bertghazali.GuiFiles.gui_helper.big_button_style"><code class="name flex">
+<span>def <span class="ident">big_button_style</span></span>(<span>button, text)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Configures the style and text of the big buttons.
+:param button: A tkinter Button widget.
+:param text: The text to show on button.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def big_button_style(button, text):
+    &#34;&#34;&#34;
+    Configures the style and text of the big buttons.
+    :param button: A tkinter Button widget.
+    :param text: The text to show on button.
+    &#34;&#34;&#34;
+    button.configure(activebackground=&#34;#ececec&#34;)
+    button.configure(activeforeground=&#34;#000000&#34;)
+    button.configure(background=&#34;#629b1c&#34;)
+    button.configure(disabledforeground=&#34;#a3a3a3&#34;)
+    button.configure(font=&#34;-family {Segoe UI} -size 14 -weight bold&#34;)
+    button.configure(foreground=&#34;#ffffff&#34;)
+    button.configure(highlightbackground=&#34;#d9d9d9&#34;)
+    button.configure(highlightcolor=&#34;black&#34;)
+    button.configure(pady=&#34;0&#34;)
+    button.configure(text=f&#39;&#39;&#39;{text}&#39;&#39;&#39;)</code></pre>
+</details>
+</dd>
+<dt id="bertghazali.GuiFiles.gui_helper.entry_widget_defaults"><code class="name flex">
+<span>def <span class="ident">entry_widget_defaults</span></span>(<span>widget)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Configures default parameters for styling and actions for Entry widget.</p>
+<p>:param widget: The Entry widget (tkinter)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def entry_widget_defaults(widget):
+    r&#34;&#34;&#34;
+    Configures default parameters for styling and actions for Entry widget.
+
+    :param widget: The Entry widget (tkinter)
+    &#34;&#34;&#34;
+    widget.configure(background=&#34;white&#34;)
+    widget.configure(font=&#34;-family {Segoe UI} -size 11&#34;)
+    widget.configure(foreground=&#34;#808080&#34;)
+    widget.configure(highlightbackground=&#34;#d9d9d9&#34;)
+    widget.configure(highlightcolor=&#34;black&#34;)
+    widget.configure(highlightthickness=1)
+    widget.configure(insertbackground=&#34;black&#34;)
+    widget.configure(selectbackground=&#34;blue&#34;)
+    widget.configure(selectforeground=&#34;white&#34;)
+    widget.bind(&#34;&lt;KeyRelease&gt;&#34;, on_key_release_apply_defaults)</code></pre>
+</details>
+</dd>
+<dt id="bertghazali.GuiFiles.gui_helper.isfloat"><code class="name flex">
+<span>def <span class="ident">isfloat</span></span>(<span>s)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Checks if parameter is float.
+:param s: the checked parameter.
+:return: True if value is float, else False.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def isfloat(s):
+    &#34;&#34;&#34;
+    Checks if parameter is float.
+    :param s: the checked parameter.
+    :return: True if value is float, else False.
+    &#34;&#34;&#34;
+    try:
+        float(s)
+        return True
+    except ValueError:
+        return False</code></pre>
+</details>
+</dd>
+<dt id="bertghazali.GuiFiles.gui_helper.isfloat_and_inrange"><code class="name flex">
+<span>def <span class="ident">isfloat_and_inrange</span></span>(<span>n, start, end)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Checks if parameter is float and in range (start,end).
+:param n: the checked parameter.
+:param start: the start number of the range.
+:param end: the end number of the range.
+:return: True if parameter is float and in the given range, else False.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def isfloat_and_inrange(n, start, end):
+    &#34;&#34;&#34;
+    Checks if parameter is float and in range (start,end).
+    :param n: the checked parameter.
+    :param start: the start number of the range.
+    :param end: the end number of the range.
+    :return: True if parameter is float and in the given range, else False.
+    &#34;&#34;&#34;
+    x = False
+    try:
+        float(n)
+        x = True if start &lt; float(n) &lt; end else False
+        return x
+    except ValueError:
+        return x</code></pre>
+</details>
+</dd>
+<dt id="bertghazali.GuiFiles.gui_helper.isint"><code class="name flex">
+<span>def <span class="ident">isint</span></span>(<span>s)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Checks if parameter is int.
+:param s: the checked parameter.
+:return: True if value is int, else False.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def isint(s):
+    &#34;&#34;&#34;
+        Checks if parameter is int.
+        :param s: the checked parameter.
+        :return: True if value is int, else False.
+        &#34;&#34;&#34;
+    try:
+        int(s)
+        return True
+    except ValueError:
+        return False</code></pre>
+</details>
+</dd>
+<dt id="bertghazali.GuiFiles.gui_helper.isint_and_inrange"><code class="name flex">
+<span>def <span class="ident">isint_and_inrange</span></span>(<span>n, start, end)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Checks if parameter is int and in range (start,end).
+:param n: the checked parameter.
+:param start: the start number of the range.
+:param end: the end number of the range.
+:return: True if parameter is int and in the given range, else False.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def isint_and_inrange(n, start, end):
+    &#34;&#34;&#34;
+    Checks if parameter is int and in range (start,end).
+    :param n: the checked parameter.
+    :param start: the start number of the range.
+    :param end: the end number of the range.
+    :return: True if parameter is int and in the given range, else False.
+    &#34;&#34;&#34;
+    x = False
+    try:
+        int(n)
+        x = True if start &lt;= int(n) &lt;= end else False
+        return x
+    except ValueError:
+        return x</code></pre>
+</details>
+</dd>
+<dt id="bertghazali.GuiFiles.gui_helper.on_key_release_apply_defaults"><code class="name flex">
+<span>def <span class="ident">on_key_release_apply_defaults</span></span>(<span>event)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Changes border of widget(Entry) to black.</p>
+<p>:param event: Generated from bind function</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def on_key_release_apply_defaults(event):
+    r&#34;&#34;&#34;
+    Changes border of widget(Entry) to black.
+
+    :param event: Generated from bind function
+    &#34;&#34;&#34;
+    event.widget.configure(highlightbackground=&#34;#d9d9d9&#34;)
+    event.widget.configure(highlightcolor=&#34;black&#34;)</code></pre>
+</details>
+</dd>
+<dt id="bertghazali.GuiFiles.gui_helper.tooltip_message"><code class="name flex">
+<span>def <span class="ident">tooltip_message</span></span>(<span>widget, message)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Attaches ToolTip box to the widget (tkinter), with proper message.</p>
+<p>:param widget: Any tkinter widget to attach ToolTip to.
+:param message: The message to be shown while mouse points on widget.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def tooltip_message(widget, message):
+    r&#34;&#34;&#34;
+    Attaches ToolTip box to the widget (tkinter), with proper message.
+
+    :param widget: Any tkinter widget to attach ToolTip to.
+    :param message: The message to be shown while mouse points on widget.
+    &#34;&#34;&#34;
+    ToolTip(widget, &#34;-family {Segoe UI} -size 11&#34;, message)</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="bertghazali.GuiFiles.gui_helper.ToolTip"><code class="flex name class">
+<span>class <span class="ident">ToolTip</span></span>
+<span>(</span><span>wdgt, tooltip_font, msg=None, msgFunc=None, delay=0.1, follow=True)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Provides a ToolTip widget for Tkinter.
+To apply a ToolTip to any Tkinter widget, simply pass the widget to the
+ToolTip constructor</p>
+<p>Initialize the ToolTip</p>
+<h2 id="arguments">Arguments</h2>
+<p>wdgt: The widget this ToolTip is assigned to
+tooltip_font: Font to be used
+msg:
+A static string message assigned to the ToolTip
+msgFunc: A function that retrieves a string to use as the ToolTip text
+delay:
+The delay in seconds before the ToolTip appears(may be float)
+follow:
+If True, the ToolTip follows motion, otherwise hides</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class ToolTip(tk.Toplevel):
+    r&#34;&#34;&#34;
+        Provides a ToolTip widget for Tkinter.
+        To apply a ToolTip to any Tkinter widget, simply pass the widget to the
+        ToolTip constructor
+    &#34;&#34;&#34;
+
+    def __init__(self, wdgt, tooltip_font, msg=None, msgFunc=None,
+                 delay=0.1, follow=True):
+        &#34;&#34;&#34;
+        Initialize the ToolTip
+
+        Arguments:
+          wdgt: The widget this ToolTip is assigned to
+          tooltip_font: Font to be used
+          msg:  A static string message assigned to the ToolTip
+          msgFunc: A function that retrieves a string to use as the ToolTip text
+          delay:   The delay in seconds before the ToolTip appears(may be float)
+          follow:  If True, the ToolTip follows motion, otherwise hides
+        &#34;&#34;&#34;
+        self.wdgt = wdgt
+        # The parent of the ToolTip is the parent of the ToolTips widget
+        self.parent = self.wdgt.master
+        # Initalise the Toplevel
+        tk.Toplevel.__init__(self, self.parent, bg=&#39;black&#39;, padx=1, pady=1)
+        # Hide initially
+        self.withdraw()
+        # The ToolTip Toplevel should have no frame or title bar
+        self.overrideredirect(True)
+
+        # The msgVar will contain the text displayed by the ToolTip
+        self.msgVar = tk.StringVar()
+        if msg is None:
+            self.msgVar.set(&#39;No message provided&#39;)
+        else:
+            self.msgVar.set(msg)
+        self.msgFunc = msgFunc
+        self.delay = delay
+        self.follow = follow
+        self.visible = 0
+        self.lastMotion = 0
+        # The text of the ToolTip is displayed in a Message widget
+        tk.Message(self, textvariable=self.msgVar, bg=&#39;#E5EBD8&#39;,
+                   font=tooltip_font,
+                   aspect=1000).grid()
+
+        # Add bindings to the widget.  This will NOT override
+        # bindings that the widget already has
+        self.wdgt.bind(&#39;&lt;Enter&gt;&#39;, self.spawn, &#39;+&#39;)
+        self.wdgt.bind(&#39;&lt;Leave&gt;&#39;, self.hide, &#39;+&#39;)
+        self.wdgt.bind(&#39;&lt;Motion&gt;&#39;, self.move, &#39;+&#39;)
+
+    def spawn(self, event=None):
+        &#34;&#34;&#34;
+        Spawn the ToolTip.  This simply makes the ToolTip eligible for display.
+        Usually this is caused by entering the widget
+
+        Arguments:
+          event: The event that called this funciton
+        &#34;&#34;&#34;
+        self.visible = 1
+        # The after function takes a time argument in milliseconds
+        self.after(int(self.delay * 1000), self.show)
+
+    def show(self):
+        &#34;&#34;&#34;
+        Displays the ToolTip if the time delay has been long enough
+        &#34;&#34;&#34;
+        if self.visible == 1 and time() - self.lastMotion &gt; self.delay:
+            self.visible = 2
+        if self.visible == 2:
+            self.deiconify()
+
+    def move(self, event):
+        &#34;&#34;&#34;
+        Processes motion within the widget.
+        Arguments:
+          event: The event that called this function
+        &#34;&#34;&#34;
+        self.lastMotion = time()
+        # If the follow flag is not set, motion within the
+        # widget will make the ToolTip disappear
+        #
+        if self.follow is False:
+            self.withdraw()
+            self.visible = 1
+
+        # Offset the ToolTip 10x10 pixes southwest of the pointer
+        self.geometry(&#39;+%i+%i&#39; % (event.x_root + 20, event.y_root - 10))
+        try:
+            # Try to call the message function.  Will not change
+            # the message if the message function is None or
+            # the message function fails
+            self.msgVar.set(self.msgFunc())
+        except:
+            pass
+        self.after(int(self.delay * 1000), self.show)
+
+    def hide(self, event=None):
+        &#34;&#34;&#34;
+        Hides the ToolTip.  Usually this is caused by leaving the widget
+        Arguments:
+          event: The event that called this function
+        &#34;&#34;&#34;
+        self.visible = 0
+        self.withdraw()
+
+    def update(self, msg):
+        &#34;&#34;&#34;
+        Updates the Tooltip with a new message. Added by Rozen
+        &#34;&#34;&#34;
+        self.msgVar.set(msg)</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>tkinter.Toplevel</li>
+<li>tkinter.BaseWidget</li>
+<li>tkinter.Misc</li>
+<li>tkinter.Wm</li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="bertghazali.GuiFiles.gui_helper.ToolTip.hide"><code class="name flex">
+<span>def <span class="ident">hide</span></span>(<span>self, event=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Hides the ToolTip.
+Usually this is caused by leaving the widget</p>
+<h2 id="arguments">Arguments</h2>
+<p>event: The event that called this function</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def hide(self, event=None):
+    &#34;&#34;&#34;
+    Hides the ToolTip.  Usually this is caused by leaving the widget
+    Arguments:
+      event: The event that called this function
+    &#34;&#34;&#34;
+    self.visible = 0
+    self.withdraw()</code></pre>
+</details>
+</dd>
+<dt id="bertghazali.GuiFiles.gui_helper.ToolTip.move"><code class="name flex">
+<span>def <span class="ident">move</span></span>(<span>self, event)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Processes motion within the widget.</p>
+<h2 id="arguments">Arguments</h2>
+<p>event: The event that called this function</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def move(self, event):
+    &#34;&#34;&#34;
+    Processes motion within the widget.
+    Arguments:
+      event: The event that called this function
+    &#34;&#34;&#34;
+    self.lastMotion = time()
+    # If the follow flag is not set, motion within the
+    # widget will make the ToolTip disappear
+    #
+    if self.follow is False:
+        self.withdraw()
+        self.visible = 1
+
+    # Offset the ToolTip 10x10 pixes southwest of the pointer
+    self.geometry(&#39;+%i+%i&#39; % (event.x_root + 20, event.y_root - 10))
+    try:
+        # Try to call the message function.  Will not change
+        # the message if the message function is None or
+        # the message function fails
+        self.msgVar.set(self.msgFunc())
+    except:
+        pass
+    self.after(int(self.delay * 1000), self.show)</code></pre>
+</details>
+</dd>
+<dt id="bertghazali.GuiFiles.gui_helper.ToolTip.show"><code class="name flex">
+<span>def <span class="ident">show</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Displays the ToolTip if the time delay has been long enough</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def show(self):
+    &#34;&#34;&#34;
+    Displays the ToolTip if the time delay has been long enough
+    &#34;&#34;&#34;
+    if self.visible == 1 and time() - self.lastMotion &gt; self.delay:
+        self.visible = 2
+    if self.visible == 2:
+        self.deiconify()</code></pre>
+</details>
+</dd>
+<dt id="bertghazali.GuiFiles.gui_helper.ToolTip.spawn"><code class="name flex">
+<span>def <span class="ident">spawn</span></span>(<span>self, event=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Spawn the ToolTip.
+This simply makes the ToolTip eligible for display.
+Usually this is caused by entering the widget</p>
+<h2 id="arguments">Arguments</h2>
+<p>event: The event that called this funciton</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def spawn(self, event=None):
+    &#34;&#34;&#34;
+    Spawn the ToolTip.  This simply makes the ToolTip eligible for display.
+    Usually this is caused by entering the widget
+
+    Arguments:
+      event: The event that called this funciton
+    &#34;&#34;&#34;
+    self.visible = 1
+    # The after function takes a time argument in milliseconds
+    self.after(int(self.delay * 1000), self.show)</code></pre>
+</details>
+</dd>
+<dt id="bertghazali.GuiFiles.gui_helper.ToolTip.update"><code class="name flex">
+<span>def <span class="ident">update</span></span>(<span>self, msg)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Updates the Tooltip with a new message. Added by Rozen</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def update(self, msg):
+    &#34;&#34;&#34;
+    Updates the Tooltip with a new message. Added by Rozen
+    &#34;&#34;&#34;
+    self.msgVar.set(msg)</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<header>
+<a class="homelink" rel="home" title="bert ghazali home" href="https://ronraifer.github.io/bertghazali/">
+<img src="https://upload.wikimedia.org/wikipedia/commons/e/e9/%D8%A3%D8%A8%D9%88_%D8%AD%D8%A7%D9%85%D8%AF_%D8%A7%D9%84%D8%BA%D8%B2%D8%A7%D9%84%D9%8A.png" alt=""> BERT-Ghazali
+</a>
+</header>
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="bertghazali.GuiFiles" href="index.html">bertghazali.GuiFiles</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="bertghazali.GuiFiles.gui_helper.big_button_style" href="#bertghazali.GuiFiles.gui_helper.big_button_style">big_button_style</a></code></li>
+<li><code><a title="bertghazali.GuiFiles.gui_helper.entry_widget_defaults" href="#bertghazali.GuiFiles.gui_helper.entry_widget_defaults">entry_widget_defaults</a></code></li>
+<li><code><a title="bertghazali.GuiFiles.gui_helper.isfloat" href="#bertghazali.GuiFiles.gui_helper.isfloat">isfloat</a></code></li>
+<li><code><a title="bertghazali.GuiFiles.gui_helper.isfloat_and_inrange" href="#bertghazali.GuiFiles.gui_helper.isfloat_and_inrange">isfloat_and_inrange</a></code></li>
+<li><code><a title="bertghazali.GuiFiles.gui_helper.isint" href="#bertghazali.GuiFiles.gui_helper.isint">isint</a></code></li>
+<li><code><a title="bertghazali.GuiFiles.gui_helper.isint_and_inrange" href="#bertghazali.GuiFiles.gui_helper.isint_and_inrange">isint_and_inrange</a></code></li>
+<li><code><a title="bertghazali.GuiFiles.gui_helper.on_key_release_apply_defaults" href="#bertghazali.GuiFiles.gui_helper.on_key_release_apply_defaults">on_key_release_apply_defaults</a></code></li>
+<li><code><a title="bertghazali.GuiFiles.gui_helper.tooltip_message" href="#bertghazali.GuiFiles.gui_helper.tooltip_message">tooltip_message</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="bertghazali.GuiFiles.gui_helper.ToolTip" href="#bertghazali.GuiFiles.gui_helper.ToolTip">ToolTip</a></code></h4>
+<ul class="">
+<li><code><a title="bertghazali.GuiFiles.gui_helper.ToolTip.hide" href="#bertghazali.GuiFiles.gui_helper.ToolTip.hide">hide</a></code></li>
+<li><code><a title="bertghazali.GuiFiles.gui_helper.ToolTip.move" href="#bertghazali.GuiFiles.gui_helper.ToolTip.move">move</a></code></li>
+<li><code><a title="bertghazali.GuiFiles.gui_helper.ToolTip.show" href="#bertghazali.GuiFiles.gui_helper.ToolTip.show">show</a></code></li>
+<li><code><a title="bertghazali.GuiFiles.gui_helper.ToolTip.spawn" href="#bertghazali.GuiFiles.gui_helper.ToolTip.spawn">spawn</a></code></li>
+<li><code><a title="bertghazali.GuiFiles.gui_helper.ToolTip.update" href="#bertghazali.GuiFiles.gui_helper.ToolTip.update">update</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.9.2</a>.</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,826 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.9.2" />
+<title>bertghazali.GuiFiles.ViewResults API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+<style>.homelink{display:block;font-size:2em;font-weight:bold;color:#555;padding-bottom:.5em;border-bottom:1px solid silver}.homelink:hover{color:inherit}.homelink img{max-width:20%;max-height:5em;margin:auto;margin-bottom:.3em}</style>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>bertghazali.GuiFiles.ViewResults</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">import os.path
+from Logic.Analyze import Analyzer
+from Data import utils
+import matplotlib.pyplot as plt
+from Logic.Analyze.Analyzer import show_results
+from GuiFiles import CNNConfigurations, SaveResults, LoadTrained
+
+try:
+    import Tkinter as tk
+except ImportError:
+    import tkinter as tk
+
+try:
+    import ttk
+
+    py3 = False
+except ImportError:
+    import tkinter.ttk as ttk
+
+    py3 = True
+
+
+def view_results_start(bread_crumbs):
+    &#34;&#34;&#34;
+        Call ViewResults_Screen class, and creates mainloop thread.
+        Also, it overrides the default exit button, in order to fix issues with plots.
+
+        Params:
+            bread_crumbs (`str`):
+                The name of the screen called View Results. So the Back button will redirects to the desired screen.
+    &#34;&#34;&#34;
+    global root, top
+    root = tk.Tk()
+    root.protocol(&#34;WM_DELETE_WINDOW&#34;, exit_handler)
+    top = view_results_Screen(bread_crumbs, root)
+    root.mainloop()
+
+
+def exit_handler():
+    &#34;&#34;&#34;
+        Called on &#39;exit window&#39; event.
+
+        It closes any plots, and destroys the current view.
+    &#34;&#34;&#34;
+    global root
+    root.destroy()
+    plt.close(utils.kmeans_plot)
+    plt.close(utils.heat_map_plot)
+
+
+def back_button_click_to_CNN():
+    &#34;&#34;&#34;
+        Called on &#39;Back&#39; button click.
+
+        It destroys the current view, and brings the &#39;CNN Configurations&#39; screen.
+        It also closes all the plots, to avoid duplicates.
+    &#34;&#34;&#34;
+    global root
+    root.destroy()
+    plt.close(utils.kmeans_plot)
+    plt.close(utils.heat_map_plot)
+    CNNConfigurations.cnn_configurations_start()
+    root = None
+
+
+def back_button_click_to_load_trained():
+    &#34;&#34;&#34;
+        Called on &#39;Back&#39; button click.
+
+        It destroys the current view, and brings the &#39;Load Trained&#39; screen.
+        It also closes all the plots, to avoid duplicates.
+    &#34;&#34;&#34;
+    global root
+    root.destroy()
+    plt.close(utils.kmeans_plot)
+    plt.close(utils.heat_map_plot)
+    LoadTrained.load_trained_start()
+    root = None
+
+
+def save_button_click():
+    &#34;&#34;&#34;
+        Called on &#39;Save Results&#39; button click.
+
+        It withdraw the current view, and brings the &#39;Save Results&#39; screen.
+    &#34;&#34;&#34;
+    global root
+    root.withdraw()
+    SaveResults.save_results_start(root)
+
+
+class view_results_Screen:
+    def __init__(self, bread_crumbs, top=None):
+        &#34;&#34;&#34;
+            This class configures and populates the &#39;View Results&#39; window.
+            top is the toplevel containing window.
+
+            In this screen, we show the results obtained from the training and predictions.
+
+            It shows HeatMap, Clustering, Silhouette, and a table with final classification.
+        &#34;&#34;&#34;
+        self.bread_crumbs = bread_crumbs
+        w = 882
+        h = 631
+        ws = top.winfo_screenwidth()
+        hs = top.winfo_screenheight()
+        x = (ws / 2) - (w / 2)
+        y = (hs / 2) - (h / 2)
+        top.geometry(&#39;%dx%d+%d+%d&#39; % (w, h, x, y))
+        top.resizable(False, False)
+        top.title(&#34;Al-Ghazali&#39;s Authorship Attribution&#34;)
+        top.configure(background=&#34;#ffffff&#34;)
+
+        self.TSeparator1 = ttk.Separator(top)
+        self.TSeparator1.place(x=380, y=10, height=50)
+        self.TSeparator1.configure(orient=&#34;vertical&#34;)
+
+        self.main_ghazali_label = tk.Label(top)
+        self.main_ghazali_label.place(x=80, y=20, height=27, width=245)
+        self.main_ghazali_label.configure(anchor=&#39;nw&#39;)
+        self.main_ghazali_label.configure(background=&#34;#ffffff&#34;)
+        self.main_ghazali_label.configure(font=&#34;-family {Segoe UI} -size 14 -weight bold&#34;)
+        self.main_ghazali_label.configure(foreground=&#34;#629b1c&#34;)
+        self.main_ghazali_label.configure(text=&#39;&#39;&#39;Results&#39;&#39;&#39;)
+
+        self.TLabel1 = ttk.Label(top)
+        self.TLabel1.place(x=10, y=5, height=60, width=70)
+        self.TLabel1.configure(background=&#34;#ffffff&#34;)
+        self.TLabel1.configure(foreground=&#34;#000000&#34;)
+        self.TLabel1.configure(font=&#34;TkDefaultFont&#34;)
+        self.TLabel1.configure(relief=&#34;flat&#34;)
+        self.TLabel1.configure(anchor=&#39;center&#39;)
+        self.TLabel1.configure(justify=&#39;center&#39;)
+        photo_location = os.path.join(&#34;GuiFiles/Al-Ghazali-Top.png&#34;)
+        global _img0
+        _img0 = tk.PhotoImage(file=photo_location)
+        self.TLabel1.configure(image=_img0)
+
+        self.Frame1 = tk.Frame(top)
+        self.Frame1.place(x=-1, y=570, height=65, width=885)
+        self.Frame1.configure(background=&#34;#eeeeee&#34;)
+        self.Frame1.configure(highlightbackground=&#34;#d9d9d9&#34;)
+        self.Frame1.configure(highlightcolor=&#34;black&#34;)
+
+        self.Label2 = tk.Label(top)
+        self.Label2.place(x=420, y=20, height=21, width=324)
+        self.Label2.configure(activebackground=&#34;#f9f9f9&#34;)
+        self.Label2.configure(activeforeground=&#34;black&#34;)
+        self.Label2.configure(background=&#34;#ffffff&#34;)
+        self.Label2.configure(disabledforeground=&#34;#a3a3a3&#34;)
+        self.Label2.configure(font=&#34;-family {Segoe UI} -size 10&#34;)
+        self.Label2.configure(foreground=&#34;#9d9d9d&#34;)
+        self.Label2.configure(highlightbackground=&#34;#d9d9d9&#34;)
+        self.Label2.configure(highlightcolor=&#34;black&#34;)
+        self.Label2.configure(text=&#39;&#39;&#39;Choose trained model to view results&#39;&#39;&#39;)
+
+        self.save_button = tk.Button(top, command=save_button_click)
+        self.save_button.place(x=680, y=582, height=33, width=188)
+        self.save_button.configure(background=&#34;#629b1c&#34;)
+        self.save_button.configure(activebackground=&#34;#ececec&#34;)
+        self.save_button.configure(activeforeground=&#34;#000000&#34;)
+        self.save_button.configure(disabledforeground=&#34;#a3a3a3&#34;)
+        self.save_button.configure(font=&#34;-family {Segoe UI} -size 11 -weight bold&#34;)
+        self.save_button.configure(foreground=&#34;#ffffff&#34;)
+        self.save_button.configure(highlightbackground=&#34;#d9d9d9&#34;)
+        self.save_button.configure(highlightcolor=&#34;#000000&#34;)
+        self.save_button.configure(pady=&#34;0&#34;)
+        self.save_button.configure(text=&#39;&#39;&#39;Save&#39;&#39;&#39;)
+
+        self.back_button = tk.Button(top,
+                                     command=back_button_click_to_CNN if self.bread_crumbs == &#34;CNN&#34;
+                                     else back_button_click_to_load_trained)
+        self.back_button.place(x=10, y=583, height=33, width=188)
+        self.back_button.configure(activebackground=&#34;#ececec&#34;)
+        self.back_button.configure(activeforeground=&#34;#000000&#34;)
+        self.back_button.configure(background=&#34;#a5b388&#34;)
+        self.back_button.configure(disabledforeground=&#34;#a3a3a3&#34;)
+        self.back_button.configure(font=&#34;-family {Segoe UI} -size 11 -weight bold&#34;)
+        self.back_button.configure(foreground=&#34;#ffffff&#34;)
+        self.back_button.configure(highlightbackground=&#34;#d9d9d9&#34;)
+        self.back_button.configure(highlightcolor=&#34;#000000&#34;)
+        self.back_button.configure(pady=&#34;0&#34;)
+        self.back_button.configure(relief=&#34;flat&#34;)
+        self.back_button.configure(text=&#39;&#39;&#39;Back&#39;&#39;&#39;)
+
+        self.TSeparator2 = ttk.Separator(top)
+        self.TSeparator2.place(x=20, y=72, width=840)
+
+        self.Label1_5_2 = tk.Label(top)
+        self.Label1_5_2.place(x=20, y=80, height=26, width=141)
+        self.Label1_5_2.configure(activebackground=&#34;#f9f9f9&#34;)
+        self.Label1_5_2.configure(activeforeground=&#34;black&#34;)
+        self.Label1_5_2.configure(anchor=&#39;nw&#39;)
+        self.Label1_5_2.configure(background=&#34;#ffffff&#34;)
+        self.Label1_5_2.configure(disabledforeground=&#34;#a3a3a3&#34;)
+        self.Label1_5_2.configure(font=&#34;-family {Segoe UI} -size 11&#34;)
+        self.Label1_5_2.configure(foreground=&#34;#525252&#34;)
+        self.Label1_5_2.configure(highlightbackground=&#34;#d9d9d9&#34;)
+        self.Label1_5_2.configure(highlightcolor=&#34;black&#34;)
+        self.Label1_5_2.configure(text=&#39;&#39;&#39;Heat Map:&#39;&#39;&#39;)
+
+        import matplotlib
+        matplotlib.use(&#34;TkAgg&#34;)
+        from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
+        show_results()
+
+        self.flag = True
+        self.h = None
+
+        def heat_map_click(event):
+            &#34;&#34;&#34;
+                Opens the heat map in a big window.
+            &#34;&#34;&#34;
+            if self.flag:
+                plt.close(utils.kmeans_plot)
+                self.h = plt.gcf()
+                self.flag = False
+            else:
+                Analyzer.produce_heatmap(big_size=True)
+            plt.show()
+
+        self.heatmap_canvas = tk.Canvas(top)
+        self.heatmap_canvas.place(x=10, y=115, height=400, width=480)
+        vsb2 = ttk.Scrollbar(top, orient=&#34;vertical&#34;, command=self.heatmap_canvas.yview)
+        vsb2.place(x=8, y=115, height=400)
+
+        self.heatmap_canvas.configure(yscrollcommand=vsb2.set)
+
+        self.heatmap_canvas = FigureCanvasTkAgg(utils.heat_map_plot, master=self.heatmap_canvas)
+        self.heatmap_canvas.draw()
+        self.heatmap_canvas.get_tk_widget().bind(&#34;&lt;Button-1&gt;&#34;, heat_map_click)
+        self.heatmap_canvas.get_tk_widget().pack(side=tk.TOP, fill=tk.BOTH, expand=1)
+
+        self.kmeans_canvas = tk.Canvas(top)
+        self.kmeans_canvas.place(x=490, y=110, height=225, width=365)
+        self.kmeans_canvas = FigureCanvasTkAgg(utils.kmeans_plot, master=self.kmeans_canvas)
+        self.kmeans_canvas.draw()
+        self.kmeans_canvas.get_tk_widget().pack(side=tk.TOP, fill=tk.BOTH, expand=1)
+
+        self.Label1_5_2_1 = tk.Label(top)
+        self.Label1_5_2_1.place(x=490, y=80, height=26, width=161)
+        self.Label1_5_2_1.configure(activebackground=&#34;#f9f9f9&#34;)
+        self.Label1_5_2_1.configure(activeforeground=&#34;black&#34;)
+        self.Label1_5_2_1.configure(anchor=&#39;nw&#39;)
+        self.Label1_5_2_1.configure(background=&#34;#ffffff&#34;)
+        self.Label1_5_2_1.configure(disabledforeground=&#34;#a3a3a3&#34;)
+        self.Label1_5_2_1.configure(font=&#34;-family {Segoe UI} -size 13&#34;)
+        self.Label1_5_2_1.configure(foreground=&#34;#525252&#34;)
+        self.Label1_5_2_1.configure(highlightbackground=&#34;#d9d9d9&#34;)
+        self.Label1_5_2_1.configure(highlightcolor=&#34;black&#34;)
+        self.Label1_5_2_1.configure(text=&#39;&#39;&#39;Cluster Centroids&#39;&#39;&#39;)
+
+        self.Label1_5_2_1_1 = tk.Label(top)
+        self.Label1_5_2_1_1.place(x=490, y=347, height=26, width=141)
+        self.Label1_5_2_1_1.configure(activebackground=&#34;#f9f9f9&#34;)
+        self.Label1_5_2_1_1.configure(activeforeground=&#34;black&#34;)
+        self.Label1_5_2_1_1.configure(anchor=&#39;nw&#39;)
+        self.Label1_5_2_1_1.configure(background=&#34;#ffffff&#34;)
+        self.Label1_5_2_1_1.configure(disabledforeground=&#34;#a3a3a3&#34;)
+        self.Label1_5_2_1_1.configure(font=&#34;-family {Segoe UI} -size 13&#34;)
+        self.Label1_5_2_1_1.configure(foreground=&#34;#525252&#34;)
+        self.Label1_5_2_1_1.configure(highlightbackground=&#34;#d9d9d9&#34;)
+        self.Label1_5_2_1_1.configure(highlightcolor=&#34;black&#34;)
+        self.Label1_5_2_1_1.configure(text=&#39;&#39;&#39;Silhouette Value:&#39;&#39;&#39;)
+
+        self.silhouette_value_label = tk.Label(top)
+        self.silhouette_value_label.place(x=630, y=347, height=26, width=155)
+        self.silhouette_value_label.configure(activebackground=&#34;#f9f9f9&#34;)
+        self.silhouette_value_label.configure(activeforeground=&#34;black&#34;)
+        self.silhouette_value_label.configure(anchor=&#39;nw&#39;)
+        self.silhouette_value_label.configure(background=&#34;#ffffff&#34;)
+        self.silhouette_value_label.configure(disabledforeground=&#34;#a3a3a3&#34;)
+        if utils.silhouette_calc &lt; utils.params[&#39;SILHOUETTE_THRESHOLD&#39;]:
+            self.silhouette_value_label.configure(foreground=&#34;#E50000&#34;)
+            self.silhouette_value_label.configure(font=&#34;-family {Segoe UI} -size 13 -weight bold&#34;)
+        else:
+            self.silhouette_value_label.configure(foreground=&#34;#525252&#34;)
+            self.silhouette_value_label.configure(font=&#34;-family {Segoe UI} -size 13&#34;)
+        self.silhouette_value_label.configure(highlightbackground=&#34;#d9d9d9&#34;)
+        self.silhouette_value_label.configure(highlightcolor=&#34;black&#34;)
+        self.silhouette_value_label.configure(text=f&#39;&#39;&#39;{utils.silhouette_calc}&#39;&#39;&#39;)
+
+        self.classification_results_table = ttk.Treeview(top, selectmode=&#39;browse&#39;)
+        self.classification_results_table.place(x=490, y=420, height=127, width=365)
+
+        vsb = ttk.Scrollbar(top, orient=&#34;vertical&#34;, command=self.classification_results_table.yview)
+        vsb.place(x=490 + 365, y=420, height=127)
+
+        self.classification_results_table.configure(yscrollcommand=vsb.set)
+
+        self.classification_results_table[&#34;columns&#34;] = (&#34;1&#34;, &#34;2&#34;)
+        self.classification_results_table[&#39;show&#39;] = &#39;headings&#39;
+        self.classification_results_table.column(&#34;1&#34;, width=285, anchor=&#39;c&#39;)
+        self.classification_results_table.column(&#34;2&#34;, width=80, anchor=&#39;c&#39;)
+        self.classification_results_table.heading(&#34;1&#34;, text=&#34;Book Name&#34;)
+        self.classification_results_table.heading(&#34;2&#34;, text=&#34;Classification&#34;)
+        self.classification_results_table.insert(&#34;&#34;, &#39;end&#39;, text=&#34;L1&#34;,
+                                                 values=(&#34;Al-mankul min Taliqat al-Usul*&#34;,
+                                                         &#34;Ghazali&#34; if utils.labels[0] == 0 else &#39;Not-Ghazali&#39;))
+        self.classification_results_table.insert(&#34;&#34;, &#39;end&#39;, text=&#34;L2&#34;,
+                                                 values=(&#34;Al Mustasfa min ilm al-Usul&#34;,
+                                                         &#34;Ghazali&#34; if utils.labels[1] == 0 else &#39;Not-Ghazali&#39;))
+        self.classification_results_table.insert(&#34;&#34;, &#39;end&#39;, text=&#34;L3&#34;,
+                                                 values=(&#34;Fada’ih al-Batiniyya wa Fada’il al-Mustazhiriyy&#34;,
+                                                         &#34;Ghazali&#34; if utils.labels[2] == 0 else &#39;Not-Ghazali&#39;))
+        self.classification_results_table.insert(&#34;&#34;, &#39;end&#39;, text=&#34;L4&#34;,
+                                                 values=(&#34;Faysal at-Tafriqa Bayna al-Islam wa al-Zandaqa&#34;,
+                                                         &#34;Ghazali&#34; if utils.labels[3] == 0 else &#39;Not-Ghazali&#39;))
+        self.classification_results_table.insert(&#34;&#34;, &#39;end&#39;, text=&#34;L5&#34;,
+                                                 values=(&#34;Kitab al-iqtisad fi al-i’tiqad&#34;,
+                                                         &#34;Ghazali&#34; if utils.labels[4] == 0 else &#39;Not-Ghazali&#39;))
+        self.classification_results_table.insert(&#34;&#34;, &#39;end&#39;, text=&#34;L6&#34;,
+                                                 values=(&#34;Kitab Iljam Al- Awamm an Ilm Al-Kalam&#34;,
+                                                         &#34;Ghazali&#34; if utils.labels[5] == 0 else &#39;Not-Ghazali&#39;))
+        self.classification_results_table.insert(&#34;&#34;, &#39;end&#39;, text=&#34;L7&#34;,
+                                                 values=(&#34;Tahafut al-Falasifa&#34;,
+                                                         &#34;Ghazali&#34; if utils.labels[6] == 0 else &#39;Not-Ghazali&#39;))
+        self.classification_results_table.insert(&#34;&#34;, &#39;end&#39;, text=&#34;L8&#34;,
+                                                 values=(&#34;Ahliyi al-Madnun bihi ala ghayri&#34;,
+                                                         &#34;Ghazali&#34; if utils.labels[7] == 0 else &#39;Not-Ghazali&#39;))
+        self.classification_results_table.insert(&#34;&#34;, &#39;end&#39;, text=&#34;L9&#34;,
+                                                 values=(&#34;Kimiya-yi Sa’ādat*&#34;,
+                                                         &#34;Ghazali&#34; if utils.labels[8] == 0 else &#39;Not-Ghazali&#39;))
+        self.classification_results_table.insert(&#34;&#34;, &#39;end&#39;, text=&#34;L10&#34;,
+                                                 values=(&#34;Mishakat al-Anwar&#34;,
+                                                         &#34;Ghazali&#34; if utils.labels[9] == 0 else &#39;Not-Ghazali&#39;))
+
+        self.Label1_5_2_1_1_1 = tk.Label(top)
+        self.Label1_5_2_1_1_1.place(x=490, y=385, height=26, width=171)
+        self.Label1_5_2_1_1_1.configure(activebackground=&#34;#f9f9f9&#34;)
+        self.Label1_5_2_1_1_1.configure(activeforeground=&#34;black&#34;)
+        self.Label1_5_2_1_1_1.configure(anchor=&#39;nw&#39;)
+        self.Label1_5_2_1_1_1.configure(background=&#34;#ffffff&#34;)
+        self.Label1_5_2_1_1_1.configure(disabledforeground=&#34;#a3a3a3&#34;)
+        self.Label1_5_2_1_1_1.configure(font=&#34;-family {Segoe UI} -size 13&#34;)
+        self.Label1_5_2_1_1_1.configure(foreground=&#34;#525252&#34;)
+        self.Label1_5_2_1_1_1.configure(highlightbackground=&#34;#d9d9d9&#34;)
+        self.Label1_5_2_1_1_1.configure(highlightcolor=&#34;black&#34;)
+        self.Label1_5_2_1_1_1.configure(text=&#39;&#39;&#39;Classification Results:&#39;&#39;&#39;)
+
+        if utils.labels[0] == utils.labels[8]:  # check if anchors belongs to the same cluster
+            self.save_button.configure(state=tk.DISABLED)
+            self.save_button.configure(background=&#34;#c0c0c0&#34;)
+            from tkinter import messagebox as mb
+            mb.showerror(&#34;Errors&#34;, &#34;The books: Al-mankul min Taliqat al-Usul, Kimiya-yi Sa’ādat, \n&#34;
+                                   &#34;are defined as anchors of different clusters, but classified as one.&#34;)</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="bertghazali.GuiFiles.ViewResults.back_button_click_to_CNN"><code class="name flex">
+<span>def <span class="ident">back_button_click_to_CNN</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Called on 'Back' button click.</p>
+<p>It destroys the current view, and brings the 'CNN Configurations' screen.
+It also closes all the plots, to avoid duplicates.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def back_button_click_to_CNN():
+    &#34;&#34;&#34;
+        Called on &#39;Back&#39; button click.
+
+        It destroys the current view, and brings the &#39;CNN Configurations&#39; screen.
+        It also closes all the plots, to avoid duplicates.
+    &#34;&#34;&#34;
+    global root
+    root.destroy()
+    plt.close(utils.kmeans_plot)
+    plt.close(utils.heat_map_plot)
+    CNNConfigurations.cnn_configurations_start()
+    root = None</code></pre>
+</details>
+</dd>
+<dt id="bertghazali.GuiFiles.ViewResults.back_button_click_to_load_trained"><code class="name flex">
+<span>def <span class="ident">back_button_click_to_load_trained</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Called on 'Back' button click.</p>
+<p>It destroys the current view, and brings the 'Load Trained' screen.
+It also closes all the plots, to avoid duplicates.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def back_button_click_to_load_trained():
+    &#34;&#34;&#34;
+        Called on &#39;Back&#39; button click.
+
+        It destroys the current view, and brings the &#39;Load Trained&#39; screen.
+        It also closes all the plots, to avoid duplicates.
+    &#34;&#34;&#34;
+    global root
+    root.destroy()
+    plt.close(utils.kmeans_plot)
+    plt.close(utils.heat_map_plot)
+    LoadTrained.load_trained_start()
+    root = None</code></pre>
+</details>
+</dd>
+<dt id="bertghazali.GuiFiles.ViewResults.exit_handler"><code class="name flex">
+<span>def <span class="ident">exit_handler</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Called on 'exit window' event.</p>
+<p>It closes any plots, and destroys the current view.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def exit_handler():
+    &#34;&#34;&#34;
+        Called on &#39;exit window&#39; event.
+
+        It closes any plots, and destroys the current view.
+    &#34;&#34;&#34;
+    global root
+    root.destroy()
+    plt.close(utils.kmeans_plot)
+    plt.close(utils.heat_map_plot)</code></pre>
+</details>
+</dd>
+<dt id="bertghazali.GuiFiles.ViewResults.save_button_click"><code class="name flex">
+<span>def <span class="ident">save_button_click</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Called on 'Save Results' button click.</p>
+<p>It withdraw the current view, and brings the 'Save Results' screen.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def save_button_click():
+    &#34;&#34;&#34;
+        Called on &#39;Save Results&#39; button click.
+
+        It withdraw the current view, and brings the &#39;Save Results&#39; screen.
+    &#34;&#34;&#34;
+    global root
+    root.withdraw()
+    SaveResults.save_results_start(root)</code></pre>
+</details>
+</dd>
+<dt id="bertghazali.GuiFiles.ViewResults.view_results_start"><code class="name flex">
+<span>def <span class="ident">view_results_start</span></span>(<span>bread_crumbs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Call ViewResults_Screen class, and creates mainloop thread.
+Also, it overrides the default exit button, in order to fix issues with plots.</p>
+<h2 id="params">Params</h2>
+<p>bread_crumbs (<code>str</code>):
+The name of the screen called View Results. So the Back button will redirects to the desired screen.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def view_results_start(bread_crumbs):
+    &#34;&#34;&#34;
+        Call ViewResults_Screen class, and creates mainloop thread.
+        Also, it overrides the default exit button, in order to fix issues with plots.
+
+        Params:
+            bread_crumbs (`str`):
+                The name of the screen called View Results. So the Back button will redirects to the desired screen.
+    &#34;&#34;&#34;
+    global root, top
+    root = tk.Tk()
+    root.protocol(&#34;WM_DELETE_WINDOW&#34;, exit_handler)
+    top = view_results_Screen(bread_crumbs, root)
+    root.mainloop()</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="bertghazali.GuiFiles.ViewResults.view_results_Screen"><code class="flex name class">
+<span>class <span class="ident">view_results_Screen</span></span>
+<span>(</span><span>bread_crumbs, top=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>This class configures and populates the 'View Results' window.
+top is the toplevel containing window.</p>
+<p>In this screen, we show the results obtained from the training and predictions.</p>
+<p>It shows HeatMap, Clustering, Silhouette, and a table with final classification.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class view_results_Screen:
+    def __init__(self, bread_crumbs, top=None):
+        &#34;&#34;&#34;
+            This class configures and populates the &#39;View Results&#39; window.
+            top is the toplevel containing window.
+
+            In this screen, we show the results obtained from the training and predictions.
+
+            It shows HeatMap, Clustering, Silhouette, and a table with final classification.
+        &#34;&#34;&#34;
+        self.bread_crumbs = bread_crumbs
+        w = 882
+        h = 631
+        ws = top.winfo_screenwidth()
+        hs = top.winfo_screenheight()
+        x = (ws / 2) - (w / 2)
+        y = (hs / 2) - (h / 2)
+        top.geometry(&#39;%dx%d+%d+%d&#39; % (w, h, x, y))
+        top.resizable(False, False)
+        top.title(&#34;Al-Ghazali&#39;s Authorship Attribution&#34;)
+        top.configure(background=&#34;#ffffff&#34;)
+
+        self.TSeparator1 = ttk.Separator(top)
+        self.TSeparator1.place(x=380, y=10, height=50)
+        self.TSeparator1.configure(orient=&#34;vertical&#34;)
+
+        self.main_ghazali_label = tk.Label(top)
+        self.main_ghazali_label.place(x=80, y=20, height=27, width=245)
+        self.main_ghazali_label.configure(anchor=&#39;nw&#39;)
+        self.main_ghazali_label.configure(background=&#34;#ffffff&#34;)
+        self.main_ghazali_label.configure(font=&#34;-family {Segoe UI} -size 14 -weight bold&#34;)
+        self.main_ghazali_label.configure(foreground=&#34;#629b1c&#34;)
+        self.main_ghazali_label.configure(text=&#39;&#39;&#39;Results&#39;&#39;&#39;)
+
+        self.TLabel1 = ttk.Label(top)
+        self.TLabel1.place(x=10, y=5, height=60, width=70)
+        self.TLabel1.configure(background=&#34;#ffffff&#34;)
+        self.TLabel1.configure(foreground=&#34;#000000&#34;)
+        self.TLabel1.configure(font=&#34;TkDefaultFont&#34;)
+        self.TLabel1.configure(relief=&#34;flat&#34;)
+        self.TLabel1.configure(anchor=&#39;center&#39;)
+        self.TLabel1.configure(justify=&#39;center&#39;)
+        photo_location = os.path.join(&#34;GuiFiles/Al-Ghazali-Top.png&#34;)
+        global _img0
+        _img0 = tk.PhotoImage(file=photo_location)
+        self.TLabel1.configure(image=_img0)
+
+        self.Frame1 = tk.Frame(top)
+        self.Frame1.place(x=-1, y=570, height=65, width=885)
+        self.Frame1.configure(background=&#34;#eeeeee&#34;)
+        self.Frame1.configure(highlightbackground=&#34;#d9d9d9&#34;)
+        self.Frame1.configure(highlightcolor=&#34;black&#34;)
+
+        self.Label2 = tk.Label(top)
+        self.Label2.place(x=420, y=20, height=21, width=324)
+        self.Label2.configure(activebackground=&#34;#f9f9f9&#34;)
+        self.Label2.configure(activeforeground=&#34;black&#34;)
+        self.Label2.configure(background=&#34;#ffffff&#34;)
+        self.Label2.configure(disabledforeground=&#34;#a3a3a3&#34;)
+        self.Label2.configure(font=&#34;-family {Segoe UI} -size 10&#34;)
+        self.Label2.configure(foreground=&#34;#9d9d9d&#34;)
+        self.Label2.configure(highlightbackground=&#34;#d9d9d9&#34;)
+        self.Label2.configure(highlightcolor=&#34;black&#34;)
+        self.Label2.configure(text=&#39;&#39;&#39;Choose trained model to view results&#39;&#39;&#39;)
+
+        self.save_button = tk.Button(top, command=save_button_click)
+        self.save_button.place(x=680, y=582, height=33, width=188)
+        self.save_button.configure(background=&#34;#629b1c&#34;)
+        self.save_button.configure(activebackground=&#34;#ececec&#34;)
+        self.save_button.configure(activeforeground=&#34;#000000&#34;)
+        self.save_button.configure(disabledforeground=&#34;#a3a3a3&#34;)
+        self.save_button.configure(font=&#34;-family {Segoe UI} -size 11 -weight bold&#34;)
+        self.save_button.configure(foreground=&#34;#ffffff&#34;)
+        self.save_button.configure(highlightbackground=&#34;#d9d9d9&#34;)
+        self.save_button.configure(highlightcolor=&#34;#000000&#34;)
+        self.save_button.configure(pady=&#34;0&#34;)
+        self.save_button.configure(text=&#39;&#39;&#39;Save&#39;&#39;&#39;)
+
+        self.back_button = tk.Button(top,
+                                     command=back_button_click_to_CNN if self.bread_crumbs == &#34;CNN&#34;
+                                     else back_button_click_to_load_trained)
+        self.back_button.place(x=10, y=583, height=33, width=188)
+        self.back_button.configure(activebackground=&#34;#ececec&#34;)
+        self.back_button.configure(activeforeground=&#34;#000000&#34;)
+        self.back_button.configure(background=&#34;#a5b388&#34;)
+        self.back_button.configure(disabledforeground=&#34;#a3a3a3&#34;)
+        self.back_button.configure(font=&#34;-family {Segoe UI} -size 11 -weight bold&#34;)
+        self.back_button.configure(foreground=&#34;#ffffff&#34;)
+        self.back_button.configure(highlightbackground=&#34;#d9d9d9&#34;)
+        self.back_button.configure(highlightcolor=&#34;#000000&#34;)
+        self.back_button.configure(pady=&#34;0&#34;)
+        self.back_button.configure(relief=&#34;flat&#34;)
+        self.back_button.configure(text=&#39;&#39;&#39;Back&#39;&#39;&#39;)
+
+        self.TSeparator2 = ttk.Separator(top)
+        self.TSeparator2.place(x=20, y=72, width=840)
+
+        self.Label1_5_2 = tk.Label(top)
+        self.Label1_5_2.place(x=20, y=80, height=26, width=141)
+        self.Label1_5_2.configure(activebackground=&#34;#f9f9f9&#34;)
+        self.Label1_5_2.configure(activeforeground=&#34;black&#34;)
+        self.Label1_5_2.configure(anchor=&#39;nw&#39;)
+        self.Label1_5_2.configure(background=&#34;#ffffff&#34;)
+        self.Label1_5_2.configure(disabledforeground=&#34;#a3a3a3&#34;)
+        self.Label1_5_2.configure(font=&#34;-family {Segoe UI} -size 11&#34;)
+        self.Label1_5_2.configure(foreground=&#34;#525252&#34;)
+        self.Label1_5_2.configure(highlightbackground=&#34;#d9d9d9&#34;)
+        self.Label1_5_2.configure(highlightcolor=&#34;black&#34;)
+        self.Label1_5_2.configure(text=&#39;&#39;&#39;Heat Map:&#39;&#39;&#39;)
+
+        import matplotlib
+        matplotlib.use(&#34;TkAgg&#34;)
+        from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
+        show_results()
+
+        self.flag = True
+        self.h = None
+
+        def heat_map_click(event):
+            &#34;&#34;&#34;
+                Opens the heat map in a big window.
+            &#34;&#34;&#34;
+            if self.flag:
+                plt.close(utils.kmeans_plot)
+                self.h = plt.gcf()
+                self.flag = False
+            else:
+                Analyzer.produce_heatmap(big_size=True)
+            plt.show()
+
+        self.heatmap_canvas = tk.Canvas(top)
+        self.heatmap_canvas.place(x=10, y=115, height=400, width=480)
+        vsb2 = ttk.Scrollbar(top, orient=&#34;vertical&#34;, command=self.heatmap_canvas.yview)
+        vsb2.place(x=8, y=115, height=400)
+
+        self.heatmap_canvas.configure(yscrollcommand=vsb2.set)
+
+        self.heatmap_canvas = FigureCanvasTkAgg(utils.heat_map_plot, master=self.heatmap_canvas)
+        self.heatmap_canvas.draw()
+        self.heatmap_canvas.get_tk_widget().bind(&#34;&lt;Button-1&gt;&#34;, heat_map_click)
+        self.heatmap_canvas.get_tk_widget().pack(side=tk.TOP, fill=tk.BOTH, expand=1)
+
+        self.kmeans_canvas = tk.Canvas(top)
+        self.kmeans_canvas.place(x=490, y=110, height=225, width=365)
+        self.kmeans_canvas = FigureCanvasTkAgg(utils.kmeans_plot, master=self.kmeans_canvas)
+        self.kmeans_canvas.draw()
+        self.kmeans_canvas.get_tk_widget().pack(side=tk.TOP, fill=tk.BOTH, expand=1)
+
+        self.Label1_5_2_1 = tk.Label(top)
+        self.Label1_5_2_1.place(x=490, y=80, height=26, width=161)
+        self.Label1_5_2_1.configure(activebackground=&#34;#f9f9f9&#34;)
+        self.Label1_5_2_1.configure(activeforeground=&#34;black&#34;)
+        self.Label1_5_2_1.configure(anchor=&#39;nw&#39;)
+        self.Label1_5_2_1.configure(background=&#34;#ffffff&#34;)
+        self.Label1_5_2_1.configure(disabledforeground=&#34;#a3a3a3&#34;)
+        self.Label1_5_2_1.configure(font=&#34;-family {Segoe UI} -size 13&#34;)
+        self.Label1_5_2_1.configure(foreground=&#34;#525252&#34;)
+        self.Label1_5_2_1.configure(highlightbackground=&#34;#d9d9d9&#34;)
+        self.Label1_5_2_1.configure(highlightcolor=&#34;black&#34;)
+        self.Label1_5_2_1.configure(text=&#39;&#39;&#39;Cluster Centroids&#39;&#39;&#39;)
+
+        self.Label1_5_2_1_1 = tk.Label(top)
+        self.Label1_5_2_1_1.place(x=490, y=347, height=26, width=141)
+        self.Label1_5_2_1_1.configure(activebackground=&#34;#f9f9f9&#34;)
+        self.Label1_5_2_1_1.configure(activeforeground=&#34;black&#34;)
+        self.Label1_5_2_1_1.configure(anchor=&#39;nw&#39;)
+        self.Label1_5_2_1_1.configure(background=&#34;#ffffff&#34;)
+        self.Label1_5_2_1_1.configure(disabledforeground=&#34;#a3a3a3&#34;)
+        self.Label1_5_2_1_1.configure(font=&#34;-family {Segoe UI} -size 13&#34;)
+        self.Label1_5_2_1_1.configure(foreground=&#34;#525252&#34;)
+        self.Label1_5_2_1_1.configure(highlightbackground=&#34;#d9d9d9&#34;)
+        self.Label1_5_2_1_1.configure(highlightcolor=&#34;black&#34;)
+        self.Label1_5_2_1_1.configure(text=&#39;&#39;&#39;Silhouette Value:&#39;&#39;&#39;)
+
+        self.silhouette_value_label = tk.Label(top)
+        self.silhouette_value_label.place(x=630, y=347, height=26, width=155)
+        self.silhouette_value_label.configure(activebackground=&#34;#f9f9f9&#34;)
+        self.silhouette_value_label.configure(activeforeground=&#34;black&#34;)
+        self.silhouette_value_label.configure(anchor=&#39;nw&#39;)
+        self.silhouette_value_label.configure(background=&#34;#ffffff&#34;)
+        self.silhouette_value_label.configure(disabledforeground=&#34;#a3a3a3&#34;)
+        if utils.silhouette_calc &lt; utils.params[&#39;SILHOUETTE_THRESHOLD&#39;]:
+            self.silhouette_value_label.configure(foreground=&#34;#E50000&#34;)
+            self.silhouette_value_label.configure(font=&#34;-family {Segoe UI} -size 13 -weight bold&#34;)
+        else:
+            self.silhouette_value_label.configure(foreground=&#34;#525252&#34;)
+            self.silhouette_value_label.configure(font=&#34;-family {Segoe UI} -size 13&#34;)
+        self.silhouette_value_label.configure(highlightbackground=&#34;#d9d9d9&#34;)
+        self.silhouette_value_label.configure(highlightcolor=&#34;black&#34;)
+        self.silhouette_value_label.configure(text=f&#39;&#39;&#39;{utils.silhouette_calc}&#39;&#39;&#39;)
+
+        self.classification_results_table = ttk.Treeview(top, selectmode=&#39;browse&#39;)
+        self.classification_results_table.place(x=490, y=420, height=127, width=365)
+
+        vsb = ttk.Scrollbar(top, orient=&#34;vertical&#34;, command=self.classification_results_table.yview)
+        vsb.place(x=490 + 365, y=420, height=127)
+
+        self.classification_results_table.configure(yscrollcommand=vsb.set)
+
+        self.classification_results_table[&#34;columns&#34;] = (&#34;1&#34;, &#34;2&#34;)
+        self.classification_results_table[&#39;show&#39;] = &#39;headings&#39;
+        self.classification_results_table.column(&#34;1&#34;, width=285, anchor=&#39;c&#39;)
+        self.classification_results_table.column(&#34;2&#34;, width=80, anchor=&#39;c&#39;)
+        self.classification_results_table.heading(&#34;1&#34;, text=&#34;Book Name&#34;)
+        self.classification_results_table.heading(&#34;2&#34;, text=&#34;Classification&#34;)
+        self.classification_results_table.insert(&#34;&#34;, &#39;end&#39;, text=&#34;L1&#34;,
+                                                 values=(&#34;Al-mankul min Taliqat al-Usul*&#34;,
+                                                         &#34;Ghazali&#34; if utils.labels[0] == 0 else &#39;Not-Ghazali&#39;))
+        self.classification_results_table.insert(&#34;&#34;, &#39;end&#39;, text=&#34;L2&#34;,
+                                                 values=(&#34;Al Mustasfa min ilm al-Usul&#34;,
+                                                         &#34;Ghazali&#34; if utils.labels[1] == 0 else &#39;Not-Ghazali&#39;))
+        self.classification_results_table.insert(&#34;&#34;, &#39;end&#39;, text=&#34;L3&#34;,
+                                                 values=(&#34;Fada’ih al-Batiniyya wa Fada’il al-Mustazhiriyy&#34;,
+                                                         &#34;Ghazali&#34; if utils.labels[2] == 0 else &#39;Not-Ghazali&#39;))
+        self.classification_results_table.insert(&#34;&#34;, &#39;end&#39;, text=&#34;L4&#34;,
+                                                 values=(&#34;Faysal at-Tafriqa Bayna al-Islam wa al-Zandaqa&#34;,
+                                                         &#34;Ghazali&#34; if utils.labels[3] == 0 else &#39;Not-Ghazali&#39;))
+        self.classification_results_table.insert(&#34;&#34;, &#39;end&#39;, text=&#34;L5&#34;,
+                                                 values=(&#34;Kitab al-iqtisad fi al-i’tiqad&#34;,
+                                                         &#34;Ghazali&#34; if utils.labels[4] == 0 else &#39;Not-Ghazali&#39;))
+        self.classification_results_table.insert(&#34;&#34;, &#39;end&#39;, text=&#34;L6&#34;,
+                                                 values=(&#34;Kitab Iljam Al- Awamm an Ilm Al-Kalam&#34;,
+                                                         &#34;Ghazali&#34; if utils.labels[5] == 0 else &#39;Not-Ghazali&#39;))
+        self.classification_results_table.insert(&#34;&#34;, &#39;end&#39;, text=&#34;L7&#34;,
+                                                 values=(&#34;Tahafut al-Falasifa&#34;,
+                                                         &#34;Ghazali&#34; if utils.labels[6] == 0 else &#39;Not-Ghazali&#39;))
+        self.classification_results_table.insert(&#34;&#34;, &#39;end&#39;, text=&#34;L8&#34;,
+                                                 values=(&#34;Ahliyi al-Madnun bihi ala ghayri&#34;,
+                                                         &#34;Ghazali&#34; if utils.labels[7] == 0 else &#39;Not-Ghazali&#39;))
+        self.classification_results_table.insert(&#34;&#34;, &#39;end&#39;, text=&#34;L9&#34;,
+                                                 values=(&#34;Kimiya-yi Sa’ādat*&#34;,
+                                                         &#34;Ghazali&#34; if utils.labels[8] == 0 else &#39;Not-Ghazali&#39;))
+        self.classification_results_table.insert(&#34;&#34;, &#39;end&#39;, text=&#34;L10&#34;,
+                                                 values=(&#34;Mishakat al-Anwar&#34;,
+                                                         &#34;Ghazali&#34; if utils.labels[9] == 0 else &#39;Not-Ghazali&#39;))
+
+        self.Label1_5_2_1_1_1 = tk.Label(top)
+        self.Label1_5_2_1_1_1.place(x=490, y=385, height=26, width=171)
+        self.Label1_5_2_1_1_1.configure(activebackground=&#34;#f9f9f9&#34;)
+        self.Label1_5_2_1_1_1.configure(activeforeground=&#34;black&#34;)
+        self.Label1_5_2_1_1_1.configure(anchor=&#39;nw&#39;)
+        self.Label1_5_2_1_1_1.configure(background=&#34;#ffffff&#34;)
+        self.Label1_5_2_1_1_1.configure(disabledforeground=&#34;#a3a3a3&#34;)
+        self.Label1_5_2_1_1_1.configure(font=&#34;-family {Segoe UI} -size 13&#34;)
+        self.Label1_5_2_1_1_1.configure(foreground=&#34;#525252&#34;)
+        self.Label1_5_2_1_1_1.configure(highlightbackground=&#34;#d9d9d9&#34;)
+        self.Label1_5_2_1_1_1.configure(highlightcolor=&#34;black&#34;)
+        self.Label1_5_2_1_1_1.configure(text=&#39;&#39;&#39;Classification Results:&#39;&#39;&#39;)
+
+        if utils.labels[0] == utils.labels[8]:  # check if anchors belongs to the same cluster
+            self.save_button.configure(state=tk.DISABLED)
+            self.save_button.configure(background=&#34;#c0c0c0&#34;)
+            from tkinter import messagebox as mb
+            mb.showerror(&#34;Errors&#34;, &#34;The books: Al-mankul min Taliqat al-Usul, Kimiya-yi Sa’ādat, \n&#34;
+                                   &#34;are defined as anchors of different clusters, but classified as one.&#34;)</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<header>
+<a class="homelink" rel="home" title="bert ghazali home" href="https://ronraifer.github.io/bertghazali/">
+<img src="https://upload.wikimedia.org/wikipedia/commons/e/e9/%D8%A3%D8%A8%D9%88_%D8%AD%D8%A7%D9%85%D8%AF_%D8%A7%D9%84%D8%BA%D8%B2%D8%A7%D9%84%D9%8A.png" alt=""> BERT-Ghazali
+</a>
+</header>
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="bertghazali.GuiFiles" href="index.html">bertghazali.GuiFiles</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="bertghazali.GuiFiles.ViewResults.back_button_click_to_CNN" href="#bertghazali.GuiFiles.ViewResults.back_button_click_to_CNN">back_button_click_to_CNN</a></code></li>
+<li><code><a title="bertghazali.GuiFiles.ViewResults.back_button_click_to_load_trained" href="#bertghazali.GuiFiles.ViewResults.back_button_click_to_load_trained">back_button_click_to_load_trained</a></code></li>
+<li><code><a title="bertghazali.GuiFiles.ViewResults.exit_handler" href="#bertghazali.GuiFiles.ViewResults.exit_handler">exit_handler</a></code></li>
+<li><code><a title="bertghazali.GuiFiles.ViewResults.save_button_click" href="#bertghazali.GuiFiles.ViewResults.save_button_click">save_button_click</a></code></li>
+<li><code><a title="bertghazali.GuiFiles.ViewResults.view_results_start" href="#bertghazali.GuiFiles.ViewResults.view_results_start">view_results_start</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="bertghazali.GuiFiles.ViewResults.view_results_Screen" href="#bertghazali.GuiFiles.ViewResults.view_results_Screen">view_results_Screen</a></code></h4>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.9.2</a>.</p>
+</footer>
+</body>
+</html>

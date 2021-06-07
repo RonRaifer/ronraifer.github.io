@@ -1,0 +1,1057 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.9.2" />
+<title>bertghazali.GuiFiles.LoadTrained API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+<style>.homelink{display:block;font-size:2em;font-weight:bold;color:#555;padding-bottom:.5em;border-bottom:1px solid silver}.homelink:hover{color:inherit}.homelink img{max-width:20%;max-height:5em;margin:auto;margin-bottom:.3em}</style>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>bertghazali.GuiFiles.LoadTrained</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">import sys
+from Data import utils
+import json
+import os.path
+from Logic.Analyze.Analyzer import read_json
+from GuiFiles import HomeScreen, ViewResults, TrainingStatus
+
+try:
+    import Tkinter as tk
+except ImportError:
+    import tkinter as tk
+
+try:
+    import ttk
+
+    py3 = False
+except ImportError:
+    import tkinter.ttk as ttk
+
+    py3 = True
+
+
+def load_trained_start():
+    &#34;&#34;&#34;
+        Calls Load_Trained_Screen class, and creates mainloop thread.
+    &#34;&#34;&#34;
+    global root, top
+    root = tk.Tk()
+    top = Load_Trained_Screen(root)
+    root.mainloop()
+
+
+def back_button_click():
+    &#34;&#34;&#34;
+    Called on &#39;Back&#39; button click.
+
+         It changes CNN and General configurations to their Defaults.
+         It destroys the current view, and brings the &#39;Home&#39; screen.
+    &#34;&#34;&#34;
+    global root
+    utils.LoadDefaultCNNConfig()
+    utils.LoadDefaultGeneralConfig()
+    root.destroy()
+    HomeScreen.home_screen_start()
+    root = None
+
+
+def show_results_button_click():
+    &#34;&#34;&#34;
+    Called on &#39;Show Results&#39; button click.
+
+         It destroys the current view, and brings the &#39;View Results&#39; screen.
+    &#34;&#34;&#34;
+    global root
+    root.destroy()
+    ViewResults.view_results_start(&#34;load_trained&#34;)  # We mention the screen we came from, to fit the view.
+    root = None
+
+
+def re_run_button_click():
+    &#34;&#34;&#34;
+    Called on &#39;Re Run&#39; button click.
+
+         It destroys the current view, and brings the &#39;Training Status&#39; screen, so the user will be able to train the
+         net with the parameters he chose.
+    &#34;&#34;&#34;
+    global root
+    root.destroy()
+    TrainingStatus.training_status_start()
+    root = None
+
+
+def update_ui_from_params():
+    &#34;&#34;&#34;
+    Shows the parameters of the selected model in the boxes shown in the GUI window.
+    &#34;&#34;&#34;
+    global top
+    top.general_Text.delete(&#39;1.0&#39;, tk.END)
+    top.cnn_Text.delete(&#39;1.0&#39;, tk.END)
+    top.general_Text.insert(tk.END, &#34;Niter: &#34; + str(utils.params[&#39;Niter&#39;]))
+    top.general_Text.insert(tk.END, &#34;\nAccuracy threshold: &#34; + str(utils.params[&#39;ACCURACY_THRESHOLD&#39;]))
+    top.general_Text.insert(tk.END, &#34;\nBert input length: &#34; + str(utils.params[&#39;BERT_INPUT_LENGTH&#39;]))
+    top.general_Text.insert(tk.END, &#34;\nF1: &#34; + str(utils.params[&#39;F1&#39;]))
+    top.general_Text.insert(tk.END, &#34;\nF: &#34; + str(utils.params[&#39;F&#39;]))
+    top.general_Text.insert(tk.END, &#34;\nSilhouette threshold: &#34; + str(utils.params[&#39;SILHOUETTE_THRESHOLD&#39;]))
+    top.general_Text.insert(tk.END, &#34;\nText division method: &#34; + str(utils.params[&#39;TEXT_DIVISION_METHOD&#39;]))
+
+    top.cnn_Text.insert(tk.END, &#34;Kernels: &#34; + str(utils.params[&#39;KERNELS&#39;]))
+    # top.cnn_Text.insert(tk.END, &#34;\nCNN filters: &#34; + str(params[&#39;CNN_FILTERS&#39;]))
+    top.cnn_Text.insert(tk.END, &#34;\nLearning rate: &#34; + str(utils.params[&#39;LEARNING_RATE&#39;]))
+    top.cnn_Text.insert(tk.END, &#34;\nNum of epochs: &#34; + str(utils.params[&#39;NB_EPOCHS&#39;]))
+
+    conv_kernels = &#34;&#34;
+    for val in utils.params[&#39;1D_CONV_KERNEL&#39;].values():
+        conv_kernels += str(val)
+        conv_kernels += &#34;,&#34;
+    conv_kernels = conv_kernels[:-1]
+    top.cnn_Text.insert(tk.END, &#34;\n1D conv kernel: &#34; + conv_kernels)
+    top.cnn_Text.insert(tk.END, &#34;\nDropout: &#34; + str(utils.params[&#39;DROPOUT_RATE&#39;]))
+    top.cnn_Text.insert(tk.END, &#34;\nOutput classes: &#34; + str(utils.params[&#39;OUTPUT_CLASSES&#39;]))
+    top.cnn_Text.insert(tk.END, &#34;\nStrides: &#34; + str(utils.params[&#39;STRIDES&#39;]))
+    top.cnn_Text.insert(tk.END, &#34;\nBatch size: &#34; + str(utils.params[&#39;BATCH_SIZE&#39;]))
+    top.cnn_Text.insert(tk.END, &#34;\nActivation function: &#34; + str(utils.params[&#39;ACTIVATION_FUNC&#39;]))
+
+
+def disable_button(button):
+    &#34;&#34;&#34;
+    Changes given button parameters, to be disabled.
+
+    Params:
+        - button(`tk.Button`):
+          The button widget to be changed.
+    &#34;&#34;&#34;
+    button.configure(state=tk.DISABLED)
+    button.configure(background=&#34;#c0c0c0&#34;)
+
+
+def enable_button(button):
+    &#34;&#34;&#34;
+    Changes given button parameters, to be enabled.
+
+    Params:
+        - button(`tk.Button`):
+          The button widget to be changed.
+    &#34;&#34;&#34;
+    button.configure(state=tk.NORMAL)
+    button.configure(background=&#34;#629b1c&#34;)
+
+
+def cmb_selected_event(eventObject):
+    &#34;&#34;&#34;
+    Called on combobox select event.
+
+        Reads the json file, checks for model existence and updates view with selected model parameters.
+    &#34;&#34;&#34;
+    global top
+    data = read_json()
+    the_chosen_one = None
+    for prevRun in data:
+        if prevRun[&#39;Name&#39;] == top.model_selection_value.get():
+            the_chosen_one = prevRun
+            break
+    if the_chosen_one is None:
+        top.delete_selected_label.place_forget()
+        top.view_log_label.place_forget()
+        utils.log_content = None
+        disable_button(top.show_results_button)
+        disable_button(top.re_run_button)
+        return
+    else:
+        top.delete_selected_label.place(x=263, y=110, height=21, width=86)
+        top.view_log_label.place(x=263, y=170, height=23, width=66)
+        previous_run_location = os.getcwd() + r&#34;\Data\PreviousRuns\\&#34;
+        log_file = previous_run_location + the_chosen_one[&#39;Name&#39;] + &#34;.txt&#34;
+        with open(log_file, mode=&#34;r&#34;, encoding=&#34;utf8&#34;) as f:
+            utils.log_content = f.readlines()
+        enable_button(top.show_results_button)
+        enable_button(top.re_run_button)
+    # update utils
+    utils.params = the_chosen_one
+    utils.heat_map = None
+    # update view with parameters
+    update_ui_from_params()
+
+
+def view_log_click(model_name):
+    &#34;&#34;&#34;
+    Called on &#39;View Log&#39; button click.
+        Opens the log file of the selected model.
+
+    Params:
+        - model_name(`string`):
+          The name of the chosen trained model.
+    &#34;&#34;&#34;
+    from os import startfile
+    previous_run_location = os.getcwd() + r&#34;\Data\PreviousRuns\\&#34;
+    log_file = previous_run_location + model_name + &#34;.txt&#34;
+    startfile(log_file)
+
+
+def delete_model_click(model_name):
+    &#34;&#34;&#34;
+    Called on &#39;Delete Model&#39; button click.
+
+    Deletes the selected model from the json file, deletes it&#39;s log file and the npy matrix.
+    And then, updates the view.
+
+    Params:
+        - model_name(`string`):
+          The name of the chosen trained model.
+    &#34;&#34;&#34;
+    from tkinter import messagebox as mb
+    res = mb.askyesno(&#34;Notice&#34;, f&#34;You are about to delete {model_name}, &#34;
+                                &#34;This action is permanent.\nAre you sure you want to continue?&#34;)
+    if res is False:
+        return
+    # If file exists, delete it
+    previous_run_location = os.getcwd() + r&#34;\Data\PreviousRuns\\&#34;
+    model_file = previous_run_location + model_name + &#34;.npy&#34;
+    log_file = previous_run_location + model_name + &#34;.txt&#34;
+    try:
+        os.remove(model_file)
+        os.remove(log_file)
+    except FileNotFoundError:
+        pass
+    data = read_json()
+    for p in data:
+        if p[&#39;Name&#39;] == model_name:
+            data.remove(p)
+    with open(previous_run_location + &#39;PreviousRuns.json&#39;, &#39;w&#39;) as f:
+        json.dump(data, f, indent=4)
+    root.destroy()
+    load_trained_start()
+
+
+class Load_Trained_Screen:
+    def __init__(self, top=None):
+        &#34;&#34;&#34;
+            This class configures and populates the Load Trained Screen.
+            top is the toplevel containing window.
+
+            This window shows a combobox with trained model, it&#39;s parameters, and possibilities to delete, view log,
+            view results and re-run.
+        &#34;&#34;&#34;
+
+        w = 886
+        h = 363
+        ws = top.winfo_screenwidth()
+        hs = top.winfo_screenheight()
+        x = (ws / 2) - (w / 2)
+        y = (hs / 2) - (h / 2)
+        top.geometry(&#39;%dx%d+%d+%d&#39; % (w, h, x, y))
+        top.resizable(False, False)
+        top.title(&#34;Al-Ghazali&#39;s Authorship Attribution&#34;)
+        top.configure(background=&#34;#ffffff&#34;)
+
+        self.TSeparator1 = ttk.Separator(top)
+        self.TSeparator1.place(x=380, y=10, height=50)
+        self.TSeparator1.configure(orient=&#34;vertical&#34;)
+
+        self.main_ghazali_label = tk.Label(top)
+        self.main_ghazali_label.place(x=60, y=20, height=27, width=245)
+        self.main_ghazali_label.configure(activebackground=&#34;#f9f9f9&#34;)
+        self.main_ghazali_label.configure(activeforeground=&#34;black&#34;)
+        self.main_ghazali_label.configure(background=&#34;#ffffff&#34;)
+        self.main_ghazali_label.configure(disabledforeground=&#34;#a3a3a3&#34;)
+        self.main_ghazali_label.configure(font=&#34;-family {Segoe UI} -size 14 -weight bold&#34;)
+        self.main_ghazali_label.configure(foreground=&#34;#629b1c&#34;)
+        self.main_ghazali_label.configure(highlightbackground=&#34;#d9d9d9&#34;)
+        self.main_ghazali_label.configure(highlightcolor=&#34;black&#34;)
+        self.main_ghazali_label.configure(text=&#39;&#39;&#39;Load Trained Model&#39;&#39;&#39;)
+
+        self.TLabel1 = ttk.Label(top)
+        self.TLabel1.place(x=10, y=5, height=60, width=70)
+        self.TLabel1.configure(background=&#34;#ffffff&#34;)
+        self.TLabel1.configure(foreground=&#34;#000000&#34;)
+        self.TLabel1.configure(font=&#34;TkDefaultFont&#34;)
+        self.TLabel1.configure(relief=&#34;flat&#34;)
+        self.TLabel1.configure(anchor=&#39;center&#39;)
+        self.TLabel1.configure(justify=&#39;center&#39;)
+        photo_location = os.path.join(&#34;GuiFiles/Al-Ghazali-Top.png&#34;)
+        global _img0
+        _img0 = tk.PhotoImage(file=photo_location)
+        self.TLabel1.configure(image=_img0)
+
+        self.Frame1 = tk.Frame(top)
+        self.Frame1.place(x=0, y=300, height=65, width=885)
+        self.Frame1.configure(background=&#34;#eeeeee&#34;)
+        self.Frame1.configure(highlightbackground=&#34;#d9d9d9&#34;)
+        self.Frame1.configure(highlightcolor=&#34;black&#34;)
+
+        self.show_results_button = tk.Button(self.Frame1, command=show_results_button_click)
+        self.show_results_button.place(x=470, y=15, height=33, width=188)
+        disable_button(self.show_results_button)
+        self.show_results_button.configure(activebackground=&#34;#ececec&#34;)
+        self.show_results_button.configure(activeforeground=&#34;#000000&#34;)
+        self.show_results_button.configure(font=&#34;-family {Segoe UI} -size 11 -weight bold&#34;)
+        self.show_results_button.configure(foreground=&#34;#ffffff&#34;)
+        self.show_results_button.configure(highlightbackground=&#34;#d9d9d9&#34;)
+        self.show_results_button.configure(highlightcolor=&#34;#000000&#34;)
+        self.show_results_button.configure(pady=&#34;0&#34;)
+        self.show_results_button.configure(relief=&#34;flat&#34;)
+        self.show_results_button.configure(text=&#39;&#39;&#39;Show Results&#39;&#39;&#39;)
+
+        self.Label2 = tk.Label(top)
+        self.Label2.place(x=390, y=23, height=21, width=324)
+        self.Label2.configure(activebackground=&#34;#f9f9f9&#34;)
+        self.Label2.configure(activeforeground=&#34;black&#34;)
+        self.Label2.configure(background=&#34;#ffffff&#34;)
+        self.Label2.configure(disabledforeground=&#34;#a3a3a3&#34;)
+        self.Label2.configure(font=&#34;-family {Segoe UI} -size 10&#34;)
+        self.Label2.configure(foreground=&#34;#9d9d9d&#34;)
+        self.Label2.configure(highlightbackground=&#34;#d9d9d9&#34;)
+        self.Label2.configure(highlightcolor=&#34;black&#34;)
+        self.Label2.configure(text=&#39;&#39;&#39;Choose trained model to view results&#39;&#39;&#39;)
+
+        self.re_run_button = tk.Button(top, command=re_run_button_click)
+        self.re_run_button.place(x=680, y=315, height=33, width=188)
+        disable_button(self.re_run_button)
+        self.re_run_button.configure(activebackground=&#34;#ececec&#34;)
+        self.re_run_button.configure(activeforeground=&#34;#000000&#34;)
+        self.re_run_button.configure(font=&#34;-family {Segoe UI} -size 11 -weight bold&#34;)
+        self.re_run_button.configure(foreground=&#34;#ffffff&#34;)
+        self.re_run_button.configure(highlightbackground=&#34;#d9d9d9&#34;)
+        self.re_run_button.configure(highlightcolor=&#34;#000000&#34;)
+        self.re_run_button.configure(pady=&#34;0&#34;)
+        self.re_run_button.configure(relief=&#34;flat&#34;)
+        self.re_run_button.configure(text=&#39;&#39;&#39;Re-Run&#39;&#39;&#39;)
+
+        self.back_button = tk.Button(top, command=back_button_click)
+        self.back_button.place(x=20, y=315, height=33, width=188)
+        self.back_button.configure(activebackground=&#34;#ececec&#34;)
+        self.back_button.configure(activeforeground=&#34;#000000&#34;)
+        self.back_button.configure(background=&#34;#a5b388&#34;)
+        self.back_button.configure(disabledforeground=&#34;#a3a3a3&#34;)
+        self.back_button.configure(font=&#34;-family {Segoe UI} -size 11 -weight bold&#34;)
+        self.back_button.configure(foreground=&#34;#ffffff&#34;)
+        self.back_button.configure(highlightbackground=&#34;#d9d9d9&#34;)
+        self.back_button.configure(highlightcolor=&#34;#000000&#34;)
+        self.back_button.configure(pady=&#34;0&#34;)
+        self.back_button.configure(relief=&#34;flat&#34;)
+        self.back_button.configure(text=&#39;&#39;&#39;Back&#39;&#39;&#39;)
+
+        self.TSeparator2 = ttk.Separator(top)
+        self.TSeparator2.place(x=20, y=72, width=840)
+
+        self.model_selection_value = ttk.Combobox(top)
+        # Populate the combobox
+        data = read_json()
+        for p in data:
+            if p[&#39;Name&#39;] not in self.model_selection_value[&#39;values&#39;]:
+                self.model_selection_value[&#39;values&#39;] = (*self.model_selection_value[&#39;values&#39;], p[&#39;Name&#39;])
+        self.model_selection_value.place(x=40, y=110, height=24, width=220)
+        self.model_selection_value.configure(font=&#34;-family {Segoe UI} -size 11&#34;)
+        self.model_selection_value.configure(foreground=&#34;#525252&#34;)
+        self.model_selection_value.configure(takefocus=&#34;&#34;)
+        self.model_selection_value.bind(&#34;&lt;&lt;ComboboxSelected&gt;&gt;&#34;, cmb_selected_event)
+
+        self.Label1_2 = tk.Label(top)
+        self.Label1_2.place(x=360, y=90, height=26, width=191)
+        self.Label1_2.configure(activebackground=&#34;#f9f9f9&#34;)
+        self.Label1_2.configure(activeforeground=&#34;black&#34;)
+        self.Label1_2.configure(anchor=&#39;nw&#39;)
+        self.Label1_2.configure(background=&#34;#ffffff&#34;)
+        self.Label1_2.configure(disabledforeground=&#34;#a3a3a3&#34;)
+        self.Label1_2.configure(font=&#34;-family {Segoe UI} -size 11&#34;)
+        self.Label1_2.configure(foreground=&#34;#525252&#34;)
+        self.Label1_2.configure(highlightbackground=&#34;#d9d9d9&#34;)
+        self.Label1_2.configure(highlightcolor=&#34;black&#34;)
+        self.Label1_2.configure(text=&#39;&#39;&#39;General Configurations:&#39;&#39;&#39;)
+
+        self.Label1_5_1_1 = tk.Label(top)
+        self.Label1_5_1_1.place(x=630, y=90, height=26, width=141)
+        self.Label1_5_1_1.configure(activebackground=&#34;#f9f9f9&#34;)
+        self.Label1_5_1_1.configure(activeforeground=&#34;black&#34;)
+        self.Label1_5_1_1.configure(anchor=&#39;nw&#39;)
+        self.Label1_5_1_1.configure(background=&#34;#ffffff&#34;)
+        self.Label1_5_1_1.configure(disabledforeground=&#34;#a3a3a3&#34;)
+        self.Label1_5_1_1.configure(font=&#34;-family {Segoe UI} -size 11&#34;)
+        self.Label1_5_1_1.configure(foreground=&#34;#525252&#34;)
+        self.Label1_5_1_1.configure(highlightbackground=&#34;#d9d9d9&#34;)
+        self.Label1_5_1_1.configure(highlightcolor=&#34;black&#34;)
+        self.Label1_5_1_1.configure(text=&#39;&#39;&#39;CNN Configurations:&#39;&#39;&#39;)
+
+        self.Label1_5_2 = tk.Label(top)
+        self.Label1_5_2.place(x=40, y=84, height=26, width=141)
+        self.Label1_5_2.configure(activebackground=&#34;#f9f9f9&#34;)
+        self.Label1_5_2.configure(activeforeground=&#34;black&#34;)
+        self.Label1_5_2.configure(anchor=&#39;nw&#39;)
+        self.Label1_5_2.configure(background=&#34;#ffffff&#34;)
+        self.Label1_5_2.configure(disabledforeground=&#34;#a3a3a3&#34;)
+        self.Label1_5_2.configure(font=&#34;-family {Segoe UI} -size 11&#34;)
+        self.Label1_5_2.configure(foreground=&#34;#525252&#34;)
+        self.Label1_5_2.configure(highlightbackground=&#34;#d9d9d9&#34;)
+        self.Label1_5_2.configure(highlightcolor=&#34;black&#34;)
+        self.Label1_5_2.configure(text=&#39;&#39;&#39;Select Model:&#39;&#39;&#39;)
+
+        self.TSeparator1_1 = ttk.Separator(top)
+        self.TSeparator1_1.place(x=600, y=140, height=120)
+        self.TSeparator1_1.configure(orient=&#34;vertical&#34;)
+
+        self.general_Text = tk.Text(top)
+        self.general_Text.place(x=360, y=120, height=164, width=214)
+        self.general_Text.configure(background=&#34;#ddefc7&#34;)
+        self.general_Text.configure(borderwidth=&#34;2&#34;)
+        self.general_Text.configure(font=&#34;TkTextFont&#34;)
+        self.general_Text.configure(foreground=&#34;black&#34;)
+        self.general_Text.configure(highlightbackground=&#34;#d9d9d9&#34;)
+        self.general_Text.configure(highlightcolor=&#34;black&#34;)
+        self.general_Text.configure(insertbackground=&#34;black&#34;)
+        self.general_Text.configure(selectbackground=&#34;blue&#34;)
+        self.general_Text.configure(selectforeground=&#34;white&#34;)
+        self.general_Text.configure(wrap=&#34;word&#34;)
+
+        self.cnn_Text = tk.Text(top)
+        self.cnn_Text.place(x=630, y=120, height=164, width=214)
+        self.cnn_Text.configure(background=&#34;#ddefc7&#34;)
+        self.cnn_Text.configure(borderwidth=&#34;2&#34;)
+        self.cnn_Text.configure(font=&#34;TkTextFont&#34;)
+        self.cnn_Text.configure(foreground=&#34;black&#34;)
+        self.cnn_Text.configure(highlightbackground=&#34;#d9d9d9&#34;)
+        self.cnn_Text.configure(highlightcolor=&#34;black&#34;)
+        self.cnn_Text.configure(insertbackground=&#34;black&#34;)
+        self.cnn_Text.configure(selectbackground=&#34;blue&#34;)
+        self.cnn_Text.configure(selectforeground=&#34;white&#34;)
+        self.cnn_Text.configure(wrap=&#34;word&#34;)
+
+        self.delete_selected_label = tk.Label(top)
+        self.delete_selected_label.configure(background=&#34;#ffffff&#34;)
+        self.delete_selected_label.configure(cursor=&#34;fleur&#34;)
+        self.delete_selected_label.configure(disabledforeground=&#34;#a3a3a3&#34;)
+        self.delete_selected_label.configure(font=&#34;-family {Segoe UI} -size 10 -underline 1&#34;)
+        self.delete_selected_label.configure(foreground=&#34;#000000&#34;)
+        self.delete_selected_label.configure(text=&#39;&#39;&#39;Delete Model&#39;&#39;&#39;)
+        self.delete_selected_label.place_forget()
+        self.delete_selected_label.bind(&#34;&lt;Button-1&gt;&#34;, lambda e: delete_model_click(utils.params[&#39;Name&#39;]))
+
+        self.view_log_label = tk.Label(top)
+        self.view_log_label.configure(background=&#34;#ffffff&#34;)
+        self.view_log_label.configure(disabledforeground=&#34;#a3a3a3&#34;)
+        self.view_log_label.configure(font=&#34;-family {Segoe UI} -size 10 -weight bold -underline 1&#34;)
+        self.view_log_label.configure(foreground=&#34;#0d25ff&#34;)
+        self.view_log_label.configure(text=&#39;&#39;&#39;View Log&#39;&#39;&#39;)
+        self.view_log_label.place_forget()
+        self.view_log_label.bind(&#34;&lt;Button-1&gt;&#34;, lambda e: view_log_click(utils.params[&#39;Name&#39;]))</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="bertghazali.GuiFiles.LoadTrained.back_button_click"><code class="name flex">
+<span>def <span class="ident">back_button_click</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Called on 'Back' button click.</p>
+<pre><code> It changes CNN and General configurations to their Defaults.
+ It destroys the current view, and brings the 'Home' screen.
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def back_button_click():
+    &#34;&#34;&#34;
+    Called on &#39;Back&#39; button click.
+
+         It changes CNN and General configurations to their Defaults.
+         It destroys the current view, and brings the &#39;Home&#39; screen.
+    &#34;&#34;&#34;
+    global root
+    utils.LoadDefaultCNNConfig()
+    utils.LoadDefaultGeneralConfig()
+    root.destroy()
+    HomeScreen.home_screen_start()
+    root = None</code></pre>
+</details>
+</dd>
+<dt id="bertghazali.GuiFiles.LoadTrained.cmb_selected_event"><code class="name flex">
+<span>def <span class="ident">cmb_selected_event</span></span>(<span>eventObject)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Called on combobox select event.</p>
+<pre><code>Reads the json file, checks for model existence and updates view with selected model parameters.
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def cmb_selected_event(eventObject):
+    &#34;&#34;&#34;
+    Called on combobox select event.
+
+        Reads the json file, checks for model existence and updates view with selected model parameters.
+    &#34;&#34;&#34;
+    global top
+    data = read_json()
+    the_chosen_one = None
+    for prevRun in data:
+        if prevRun[&#39;Name&#39;] == top.model_selection_value.get():
+            the_chosen_one = prevRun
+            break
+    if the_chosen_one is None:
+        top.delete_selected_label.place_forget()
+        top.view_log_label.place_forget()
+        utils.log_content = None
+        disable_button(top.show_results_button)
+        disable_button(top.re_run_button)
+        return
+    else:
+        top.delete_selected_label.place(x=263, y=110, height=21, width=86)
+        top.view_log_label.place(x=263, y=170, height=23, width=66)
+        previous_run_location = os.getcwd() + r&#34;\Data\PreviousRuns\\&#34;
+        log_file = previous_run_location + the_chosen_one[&#39;Name&#39;] + &#34;.txt&#34;
+        with open(log_file, mode=&#34;r&#34;, encoding=&#34;utf8&#34;) as f:
+            utils.log_content = f.readlines()
+        enable_button(top.show_results_button)
+        enable_button(top.re_run_button)
+    # update utils
+    utils.params = the_chosen_one
+    utils.heat_map = None
+    # update view with parameters
+    update_ui_from_params()</code></pre>
+</details>
+</dd>
+<dt id="bertghazali.GuiFiles.LoadTrained.delete_model_click"><code class="name flex">
+<span>def <span class="ident">delete_model_click</span></span>(<span>model_name)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Called on 'Delete Model' button click.</p>
+<p>Deletes the selected model from the json file, deletes it's log file and the npy matrix.
+And then, updates the view.</p>
+<h2 id="params">Params</h2>
+<ul>
+<li>model_name(<code>string</code>):
+The name of the chosen trained model.</li>
+</ul></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def delete_model_click(model_name):
+    &#34;&#34;&#34;
+    Called on &#39;Delete Model&#39; button click.
+
+    Deletes the selected model from the json file, deletes it&#39;s log file and the npy matrix.
+    And then, updates the view.
+
+    Params:
+        - model_name(`string`):
+          The name of the chosen trained model.
+    &#34;&#34;&#34;
+    from tkinter import messagebox as mb
+    res = mb.askyesno(&#34;Notice&#34;, f&#34;You are about to delete {model_name}, &#34;
+                                &#34;This action is permanent.\nAre you sure you want to continue?&#34;)
+    if res is False:
+        return
+    # If file exists, delete it
+    previous_run_location = os.getcwd() + r&#34;\Data\PreviousRuns\\&#34;
+    model_file = previous_run_location + model_name + &#34;.npy&#34;
+    log_file = previous_run_location + model_name + &#34;.txt&#34;
+    try:
+        os.remove(model_file)
+        os.remove(log_file)
+    except FileNotFoundError:
+        pass
+    data = read_json()
+    for p in data:
+        if p[&#39;Name&#39;] == model_name:
+            data.remove(p)
+    with open(previous_run_location + &#39;PreviousRuns.json&#39;, &#39;w&#39;) as f:
+        json.dump(data, f, indent=4)
+    root.destroy()
+    load_trained_start()</code></pre>
+</details>
+</dd>
+<dt id="bertghazali.GuiFiles.LoadTrained.disable_button"><code class="name flex">
+<span>def <span class="ident">disable_button</span></span>(<span>button)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Changes given button parameters, to be disabled.</p>
+<h2 id="params">Params</h2>
+<ul>
+<li>button(<code>tk.Button</code>):
+The button widget to be changed.</li>
+</ul></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def disable_button(button):
+    &#34;&#34;&#34;
+    Changes given button parameters, to be disabled.
+
+    Params:
+        - button(`tk.Button`):
+          The button widget to be changed.
+    &#34;&#34;&#34;
+    button.configure(state=tk.DISABLED)
+    button.configure(background=&#34;#c0c0c0&#34;)</code></pre>
+</details>
+</dd>
+<dt id="bertghazali.GuiFiles.LoadTrained.enable_button"><code class="name flex">
+<span>def <span class="ident">enable_button</span></span>(<span>button)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Changes given button parameters, to be enabled.</p>
+<h2 id="params">Params</h2>
+<ul>
+<li>button(<code>tk.Button</code>):
+The button widget to be changed.</li>
+</ul></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def enable_button(button):
+    &#34;&#34;&#34;
+    Changes given button parameters, to be enabled.
+
+    Params:
+        - button(`tk.Button`):
+          The button widget to be changed.
+    &#34;&#34;&#34;
+    button.configure(state=tk.NORMAL)
+    button.configure(background=&#34;#629b1c&#34;)</code></pre>
+</details>
+</dd>
+<dt id="bertghazali.GuiFiles.LoadTrained.load_trained_start"><code class="name flex">
+<span>def <span class="ident">load_trained_start</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Calls Load_Trained_Screen class, and creates mainloop thread.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def load_trained_start():
+    &#34;&#34;&#34;
+        Calls Load_Trained_Screen class, and creates mainloop thread.
+    &#34;&#34;&#34;
+    global root, top
+    root = tk.Tk()
+    top = Load_Trained_Screen(root)
+    root.mainloop()</code></pre>
+</details>
+</dd>
+<dt id="bertghazali.GuiFiles.LoadTrained.re_run_button_click"><code class="name flex">
+<span>def <span class="ident">re_run_button_click</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Called on 'Re Run' button click.</p>
+<pre><code> It destroys the current view, and brings the 'Training Status' screen, so the user will be able to train the
+ net with the parameters he chose.
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def re_run_button_click():
+    &#34;&#34;&#34;
+    Called on &#39;Re Run&#39; button click.
+
+         It destroys the current view, and brings the &#39;Training Status&#39; screen, so the user will be able to train the
+         net with the parameters he chose.
+    &#34;&#34;&#34;
+    global root
+    root.destroy()
+    TrainingStatus.training_status_start()
+    root = None</code></pre>
+</details>
+</dd>
+<dt id="bertghazali.GuiFiles.LoadTrained.show_results_button_click"><code class="name flex">
+<span>def <span class="ident">show_results_button_click</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Called on 'Show Results' button click.</p>
+<pre><code> It destroys the current view, and brings the 'View Results' screen.
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def show_results_button_click():
+    &#34;&#34;&#34;
+    Called on &#39;Show Results&#39; button click.
+
+         It destroys the current view, and brings the &#39;View Results&#39; screen.
+    &#34;&#34;&#34;
+    global root
+    root.destroy()
+    ViewResults.view_results_start(&#34;load_trained&#34;)  # We mention the screen we came from, to fit the view.
+    root = None</code></pre>
+</details>
+</dd>
+<dt id="bertghazali.GuiFiles.LoadTrained.update_ui_from_params"><code class="name flex">
+<span>def <span class="ident">update_ui_from_params</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Shows the parameters of the selected model in the boxes shown in the GUI window.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def update_ui_from_params():
+    &#34;&#34;&#34;
+    Shows the parameters of the selected model in the boxes shown in the GUI window.
+    &#34;&#34;&#34;
+    global top
+    top.general_Text.delete(&#39;1.0&#39;, tk.END)
+    top.cnn_Text.delete(&#39;1.0&#39;, tk.END)
+    top.general_Text.insert(tk.END, &#34;Niter: &#34; + str(utils.params[&#39;Niter&#39;]))
+    top.general_Text.insert(tk.END, &#34;\nAccuracy threshold: &#34; + str(utils.params[&#39;ACCURACY_THRESHOLD&#39;]))
+    top.general_Text.insert(tk.END, &#34;\nBert input length: &#34; + str(utils.params[&#39;BERT_INPUT_LENGTH&#39;]))
+    top.general_Text.insert(tk.END, &#34;\nF1: &#34; + str(utils.params[&#39;F1&#39;]))
+    top.general_Text.insert(tk.END, &#34;\nF: &#34; + str(utils.params[&#39;F&#39;]))
+    top.general_Text.insert(tk.END, &#34;\nSilhouette threshold: &#34; + str(utils.params[&#39;SILHOUETTE_THRESHOLD&#39;]))
+    top.general_Text.insert(tk.END, &#34;\nText division method: &#34; + str(utils.params[&#39;TEXT_DIVISION_METHOD&#39;]))
+
+    top.cnn_Text.insert(tk.END, &#34;Kernels: &#34; + str(utils.params[&#39;KERNELS&#39;]))
+    # top.cnn_Text.insert(tk.END, &#34;\nCNN filters: &#34; + str(params[&#39;CNN_FILTERS&#39;]))
+    top.cnn_Text.insert(tk.END, &#34;\nLearning rate: &#34; + str(utils.params[&#39;LEARNING_RATE&#39;]))
+    top.cnn_Text.insert(tk.END, &#34;\nNum of epochs: &#34; + str(utils.params[&#39;NB_EPOCHS&#39;]))
+
+    conv_kernels = &#34;&#34;
+    for val in utils.params[&#39;1D_CONV_KERNEL&#39;].values():
+        conv_kernels += str(val)
+        conv_kernels += &#34;,&#34;
+    conv_kernels = conv_kernels[:-1]
+    top.cnn_Text.insert(tk.END, &#34;\n1D conv kernel: &#34; + conv_kernels)
+    top.cnn_Text.insert(tk.END, &#34;\nDropout: &#34; + str(utils.params[&#39;DROPOUT_RATE&#39;]))
+    top.cnn_Text.insert(tk.END, &#34;\nOutput classes: &#34; + str(utils.params[&#39;OUTPUT_CLASSES&#39;]))
+    top.cnn_Text.insert(tk.END, &#34;\nStrides: &#34; + str(utils.params[&#39;STRIDES&#39;]))
+    top.cnn_Text.insert(tk.END, &#34;\nBatch size: &#34; + str(utils.params[&#39;BATCH_SIZE&#39;]))
+    top.cnn_Text.insert(tk.END, &#34;\nActivation function: &#34; + str(utils.params[&#39;ACTIVATION_FUNC&#39;]))</code></pre>
+</details>
+</dd>
+<dt id="bertghazali.GuiFiles.LoadTrained.view_log_click"><code class="name flex">
+<span>def <span class="ident">view_log_click</span></span>(<span>model_name)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Called on 'View Log' button click.
+Opens the log file of the selected model.</p>
+<h2 id="params">Params</h2>
+<ul>
+<li>model_name(<code>string</code>):
+The name of the chosen trained model.</li>
+</ul></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def view_log_click(model_name):
+    &#34;&#34;&#34;
+    Called on &#39;View Log&#39; button click.
+        Opens the log file of the selected model.
+
+    Params:
+        - model_name(`string`):
+          The name of the chosen trained model.
+    &#34;&#34;&#34;
+    from os import startfile
+    previous_run_location = os.getcwd() + r&#34;\Data\PreviousRuns\\&#34;
+    log_file = previous_run_location + model_name + &#34;.txt&#34;
+    startfile(log_file)</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="bertghazali.GuiFiles.LoadTrained.Load_Trained_Screen"><code class="flex name class">
+<span>class <span class="ident">Load_Trained_Screen</span></span>
+<span>(</span><span>top=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>This class configures and populates the Load Trained Screen.
+top is the toplevel containing window.</p>
+<p>This window shows a combobox with trained model, it's parameters, and possibilities to delete, view log,
+view results and re-run.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Load_Trained_Screen:
+    def __init__(self, top=None):
+        &#34;&#34;&#34;
+            This class configures and populates the Load Trained Screen.
+            top is the toplevel containing window.
+
+            This window shows a combobox with trained model, it&#39;s parameters, and possibilities to delete, view log,
+            view results and re-run.
+        &#34;&#34;&#34;
+
+        w = 886
+        h = 363
+        ws = top.winfo_screenwidth()
+        hs = top.winfo_screenheight()
+        x = (ws / 2) - (w / 2)
+        y = (hs / 2) - (h / 2)
+        top.geometry(&#39;%dx%d+%d+%d&#39; % (w, h, x, y))
+        top.resizable(False, False)
+        top.title(&#34;Al-Ghazali&#39;s Authorship Attribution&#34;)
+        top.configure(background=&#34;#ffffff&#34;)
+
+        self.TSeparator1 = ttk.Separator(top)
+        self.TSeparator1.place(x=380, y=10, height=50)
+        self.TSeparator1.configure(orient=&#34;vertical&#34;)
+
+        self.main_ghazali_label = tk.Label(top)
+        self.main_ghazali_label.place(x=60, y=20, height=27, width=245)
+        self.main_ghazali_label.configure(activebackground=&#34;#f9f9f9&#34;)
+        self.main_ghazali_label.configure(activeforeground=&#34;black&#34;)
+        self.main_ghazali_label.configure(background=&#34;#ffffff&#34;)
+        self.main_ghazali_label.configure(disabledforeground=&#34;#a3a3a3&#34;)
+        self.main_ghazali_label.configure(font=&#34;-family {Segoe UI} -size 14 -weight bold&#34;)
+        self.main_ghazali_label.configure(foreground=&#34;#629b1c&#34;)
+        self.main_ghazali_label.configure(highlightbackground=&#34;#d9d9d9&#34;)
+        self.main_ghazali_label.configure(highlightcolor=&#34;black&#34;)
+        self.main_ghazali_label.configure(text=&#39;&#39;&#39;Load Trained Model&#39;&#39;&#39;)
+
+        self.TLabel1 = ttk.Label(top)
+        self.TLabel1.place(x=10, y=5, height=60, width=70)
+        self.TLabel1.configure(background=&#34;#ffffff&#34;)
+        self.TLabel1.configure(foreground=&#34;#000000&#34;)
+        self.TLabel1.configure(font=&#34;TkDefaultFont&#34;)
+        self.TLabel1.configure(relief=&#34;flat&#34;)
+        self.TLabel1.configure(anchor=&#39;center&#39;)
+        self.TLabel1.configure(justify=&#39;center&#39;)
+        photo_location = os.path.join(&#34;GuiFiles/Al-Ghazali-Top.png&#34;)
+        global _img0
+        _img0 = tk.PhotoImage(file=photo_location)
+        self.TLabel1.configure(image=_img0)
+
+        self.Frame1 = tk.Frame(top)
+        self.Frame1.place(x=0, y=300, height=65, width=885)
+        self.Frame1.configure(background=&#34;#eeeeee&#34;)
+        self.Frame1.configure(highlightbackground=&#34;#d9d9d9&#34;)
+        self.Frame1.configure(highlightcolor=&#34;black&#34;)
+
+        self.show_results_button = tk.Button(self.Frame1, command=show_results_button_click)
+        self.show_results_button.place(x=470, y=15, height=33, width=188)
+        disable_button(self.show_results_button)
+        self.show_results_button.configure(activebackground=&#34;#ececec&#34;)
+        self.show_results_button.configure(activeforeground=&#34;#000000&#34;)
+        self.show_results_button.configure(font=&#34;-family {Segoe UI} -size 11 -weight bold&#34;)
+        self.show_results_button.configure(foreground=&#34;#ffffff&#34;)
+        self.show_results_button.configure(highlightbackground=&#34;#d9d9d9&#34;)
+        self.show_results_button.configure(highlightcolor=&#34;#000000&#34;)
+        self.show_results_button.configure(pady=&#34;0&#34;)
+        self.show_results_button.configure(relief=&#34;flat&#34;)
+        self.show_results_button.configure(text=&#39;&#39;&#39;Show Results&#39;&#39;&#39;)
+
+        self.Label2 = tk.Label(top)
+        self.Label2.place(x=390, y=23, height=21, width=324)
+        self.Label2.configure(activebackground=&#34;#f9f9f9&#34;)
+        self.Label2.configure(activeforeground=&#34;black&#34;)
+        self.Label2.configure(background=&#34;#ffffff&#34;)
+        self.Label2.configure(disabledforeground=&#34;#a3a3a3&#34;)
+        self.Label2.configure(font=&#34;-family {Segoe UI} -size 10&#34;)
+        self.Label2.configure(foreground=&#34;#9d9d9d&#34;)
+        self.Label2.configure(highlightbackground=&#34;#d9d9d9&#34;)
+        self.Label2.configure(highlightcolor=&#34;black&#34;)
+        self.Label2.configure(text=&#39;&#39;&#39;Choose trained model to view results&#39;&#39;&#39;)
+
+        self.re_run_button = tk.Button(top, command=re_run_button_click)
+        self.re_run_button.place(x=680, y=315, height=33, width=188)
+        disable_button(self.re_run_button)
+        self.re_run_button.configure(activebackground=&#34;#ececec&#34;)
+        self.re_run_button.configure(activeforeground=&#34;#000000&#34;)
+        self.re_run_button.configure(font=&#34;-family {Segoe UI} -size 11 -weight bold&#34;)
+        self.re_run_button.configure(foreground=&#34;#ffffff&#34;)
+        self.re_run_button.configure(highlightbackground=&#34;#d9d9d9&#34;)
+        self.re_run_button.configure(highlightcolor=&#34;#000000&#34;)
+        self.re_run_button.configure(pady=&#34;0&#34;)
+        self.re_run_button.configure(relief=&#34;flat&#34;)
+        self.re_run_button.configure(text=&#39;&#39;&#39;Re-Run&#39;&#39;&#39;)
+
+        self.back_button = tk.Button(top, command=back_button_click)
+        self.back_button.place(x=20, y=315, height=33, width=188)
+        self.back_button.configure(activebackground=&#34;#ececec&#34;)
+        self.back_button.configure(activeforeground=&#34;#000000&#34;)
+        self.back_button.configure(background=&#34;#a5b388&#34;)
+        self.back_button.configure(disabledforeground=&#34;#a3a3a3&#34;)
+        self.back_button.configure(font=&#34;-family {Segoe UI} -size 11 -weight bold&#34;)
+        self.back_button.configure(foreground=&#34;#ffffff&#34;)
+        self.back_button.configure(highlightbackground=&#34;#d9d9d9&#34;)
+        self.back_button.configure(highlightcolor=&#34;#000000&#34;)
+        self.back_button.configure(pady=&#34;0&#34;)
+        self.back_button.configure(relief=&#34;flat&#34;)
+        self.back_button.configure(text=&#39;&#39;&#39;Back&#39;&#39;&#39;)
+
+        self.TSeparator2 = ttk.Separator(top)
+        self.TSeparator2.place(x=20, y=72, width=840)
+
+        self.model_selection_value = ttk.Combobox(top)
+        # Populate the combobox
+        data = read_json()
+        for p in data:
+            if p[&#39;Name&#39;] not in self.model_selection_value[&#39;values&#39;]:
+                self.model_selection_value[&#39;values&#39;] = (*self.model_selection_value[&#39;values&#39;], p[&#39;Name&#39;])
+        self.model_selection_value.place(x=40, y=110, height=24, width=220)
+        self.model_selection_value.configure(font=&#34;-family {Segoe UI} -size 11&#34;)
+        self.model_selection_value.configure(foreground=&#34;#525252&#34;)
+        self.model_selection_value.configure(takefocus=&#34;&#34;)
+        self.model_selection_value.bind(&#34;&lt;&lt;ComboboxSelected&gt;&gt;&#34;, cmb_selected_event)
+
+        self.Label1_2 = tk.Label(top)
+        self.Label1_2.place(x=360, y=90, height=26, width=191)
+        self.Label1_2.configure(activebackground=&#34;#f9f9f9&#34;)
+        self.Label1_2.configure(activeforeground=&#34;black&#34;)
+        self.Label1_2.configure(anchor=&#39;nw&#39;)
+        self.Label1_2.configure(background=&#34;#ffffff&#34;)
+        self.Label1_2.configure(disabledforeground=&#34;#a3a3a3&#34;)
+        self.Label1_2.configure(font=&#34;-family {Segoe UI} -size 11&#34;)
+        self.Label1_2.configure(foreground=&#34;#525252&#34;)
+        self.Label1_2.configure(highlightbackground=&#34;#d9d9d9&#34;)
+        self.Label1_2.configure(highlightcolor=&#34;black&#34;)
+        self.Label1_2.configure(text=&#39;&#39;&#39;General Configurations:&#39;&#39;&#39;)
+
+        self.Label1_5_1_1 = tk.Label(top)
+        self.Label1_5_1_1.place(x=630, y=90, height=26, width=141)
+        self.Label1_5_1_1.configure(activebackground=&#34;#f9f9f9&#34;)
+        self.Label1_5_1_1.configure(activeforeground=&#34;black&#34;)
+        self.Label1_5_1_1.configure(anchor=&#39;nw&#39;)
+        self.Label1_5_1_1.configure(background=&#34;#ffffff&#34;)
+        self.Label1_5_1_1.configure(disabledforeground=&#34;#a3a3a3&#34;)
+        self.Label1_5_1_1.configure(font=&#34;-family {Segoe UI} -size 11&#34;)
+        self.Label1_5_1_1.configure(foreground=&#34;#525252&#34;)
+        self.Label1_5_1_1.configure(highlightbackground=&#34;#d9d9d9&#34;)
+        self.Label1_5_1_1.configure(highlightcolor=&#34;black&#34;)
+        self.Label1_5_1_1.configure(text=&#39;&#39;&#39;CNN Configurations:&#39;&#39;&#39;)
+
+        self.Label1_5_2 = tk.Label(top)
+        self.Label1_5_2.place(x=40, y=84, height=26, width=141)
+        self.Label1_5_2.configure(activebackground=&#34;#f9f9f9&#34;)
+        self.Label1_5_2.configure(activeforeground=&#34;black&#34;)
+        self.Label1_5_2.configure(anchor=&#39;nw&#39;)
+        self.Label1_5_2.configure(background=&#34;#ffffff&#34;)
+        self.Label1_5_2.configure(disabledforeground=&#34;#a3a3a3&#34;)
+        self.Label1_5_2.configure(font=&#34;-family {Segoe UI} -size 11&#34;)
+        self.Label1_5_2.configure(foreground=&#34;#525252&#34;)
+        self.Label1_5_2.configure(highlightbackground=&#34;#d9d9d9&#34;)
+        self.Label1_5_2.configure(highlightcolor=&#34;black&#34;)
+        self.Label1_5_2.configure(text=&#39;&#39;&#39;Select Model:&#39;&#39;&#39;)
+
+        self.TSeparator1_1 = ttk.Separator(top)
+        self.TSeparator1_1.place(x=600, y=140, height=120)
+        self.TSeparator1_1.configure(orient=&#34;vertical&#34;)
+
+        self.general_Text = tk.Text(top)
+        self.general_Text.place(x=360, y=120, height=164, width=214)
+        self.general_Text.configure(background=&#34;#ddefc7&#34;)
+        self.general_Text.configure(borderwidth=&#34;2&#34;)
+        self.general_Text.configure(font=&#34;TkTextFont&#34;)
+        self.general_Text.configure(foreground=&#34;black&#34;)
+        self.general_Text.configure(highlightbackground=&#34;#d9d9d9&#34;)
+        self.general_Text.configure(highlightcolor=&#34;black&#34;)
+        self.general_Text.configure(insertbackground=&#34;black&#34;)
+        self.general_Text.configure(selectbackground=&#34;blue&#34;)
+        self.general_Text.configure(selectforeground=&#34;white&#34;)
+        self.general_Text.configure(wrap=&#34;word&#34;)
+
+        self.cnn_Text = tk.Text(top)
+        self.cnn_Text.place(x=630, y=120, height=164, width=214)
+        self.cnn_Text.configure(background=&#34;#ddefc7&#34;)
+        self.cnn_Text.configure(borderwidth=&#34;2&#34;)
+        self.cnn_Text.configure(font=&#34;TkTextFont&#34;)
+        self.cnn_Text.configure(foreground=&#34;black&#34;)
+        self.cnn_Text.configure(highlightbackground=&#34;#d9d9d9&#34;)
+        self.cnn_Text.configure(highlightcolor=&#34;black&#34;)
+        self.cnn_Text.configure(insertbackground=&#34;black&#34;)
+        self.cnn_Text.configure(selectbackground=&#34;blue&#34;)
+        self.cnn_Text.configure(selectforeground=&#34;white&#34;)
+        self.cnn_Text.configure(wrap=&#34;word&#34;)
+
+        self.delete_selected_label = tk.Label(top)
+        self.delete_selected_label.configure(background=&#34;#ffffff&#34;)
+        self.delete_selected_label.configure(cursor=&#34;fleur&#34;)
+        self.delete_selected_label.configure(disabledforeground=&#34;#a3a3a3&#34;)
+        self.delete_selected_label.configure(font=&#34;-family {Segoe UI} -size 10 -underline 1&#34;)
+        self.delete_selected_label.configure(foreground=&#34;#000000&#34;)
+        self.delete_selected_label.configure(text=&#39;&#39;&#39;Delete Model&#39;&#39;&#39;)
+        self.delete_selected_label.place_forget()
+        self.delete_selected_label.bind(&#34;&lt;Button-1&gt;&#34;, lambda e: delete_model_click(utils.params[&#39;Name&#39;]))
+
+        self.view_log_label = tk.Label(top)
+        self.view_log_label.configure(background=&#34;#ffffff&#34;)
+        self.view_log_label.configure(disabledforeground=&#34;#a3a3a3&#34;)
+        self.view_log_label.configure(font=&#34;-family {Segoe UI} -size 10 -weight bold -underline 1&#34;)
+        self.view_log_label.configure(foreground=&#34;#0d25ff&#34;)
+        self.view_log_label.configure(text=&#39;&#39;&#39;View Log&#39;&#39;&#39;)
+        self.view_log_label.place_forget()
+        self.view_log_label.bind(&#34;&lt;Button-1&gt;&#34;, lambda e: view_log_click(utils.params[&#39;Name&#39;]))</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<header>
+<a class="homelink" rel="home" title="bert ghazali home" href="https://ronraifer.github.io/bertghazali/">
+<img src="https://upload.wikimedia.org/wikipedia/commons/e/e9/%D8%A3%D8%A8%D9%88_%D8%AD%D8%A7%D9%85%D8%AF_%D8%A7%D9%84%D8%BA%D8%B2%D8%A7%D9%84%D9%8A.png" alt=""> BERT-Ghazali
+</a>
+</header>
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="bertghazali.GuiFiles" href="index.html">bertghazali.GuiFiles</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="bertghazali.GuiFiles.LoadTrained.back_button_click" href="#bertghazali.GuiFiles.LoadTrained.back_button_click">back_button_click</a></code></li>
+<li><code><a title="bertghazali.GuiFiles.LoadTrained.cmb_selected_event" href="#bertghazali.GuiFiles.LoadTrained.cmb_selected_event">cmb_selected_event</a></code></li>
+<li><code><a title="bertghazali.GuiFiles.LoadTrained.delete_model_click" href="#bertghazali.GuiFiles.LoadTrained.delete_model_click">delete_model_click</a></code></li>
+<li><code><a title="bertghazali.GuiFiles.LoadTrained.disable_button" href="#bertghazali.GuiFiles.LoadTrained.disable_button">disable_button</a></code></li>
+<li><code><a title="bertghazali.GuiFiles.LoadTrained.enable_button" href="#bertghazali.GuiFiles.LoadTrained.enable_button">enable_button</a></code></li>
+<li><code><a title="bertghazali.GuiFiles.LoadTrained.load_trained_start" href="#bertghazali.GuiFiles.LoadTrained.load_trained_start">load_trained_start</a></code></li>
+<li><code><a title="bertghazali.GuiFiles.LoadTrained.re_run_button_click" href="#bertghazali.GuiFiles.LoadTrained.re_run_button_click">re_run_button_click</a></code></li>
+<li><code><a title="bertghazali.GuiFiles.LoadTrained.show_results_button_click" href="#bertghazali.GuiFiles.LoadTrained.show_results_button_click">show_results_button_click</a></code></li>
+<li><code><a title="bertghazali.GuiFiles.LoadTrained.update_ui_from_params" href="#bertghazali.GuiFiles.LoadTrained.update_ui_from_params">update_ui_from_params</a></code></li>
+<li><code><a title="bertghazali.GuiFiles.LoadTrained.view_log_click" href="#bertghazali.GuiFiles.LoadTrained.view_log_click">view_log_click</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="bertghazali.GuiFiles.LoadTrained.Load_Trained_Screen" href="#bertghazali.GuiFiles.LoadTrained.Load_Trained_Screen">Load_Trained_Screen</a></code></h4>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.9.2</a>.</p>
+</footer>
+</body>
+</html>
