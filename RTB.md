@@ -46,7 +46,7 @@ This section will guide you and explain how to run the app in each mode.
 - Now tick the 'Send' button, and review the response.
 - Example "degifted" below
 
-![how_to_debug](https://github.com/RonRaifer/RTB/blob/06d763cc845d205ed738ab0e3f1b1aecfd25ec07/guide_files/how_to_debug.gif)
+![how_to_debug](https://raw.githubusercontent.com/RonRaifer/RTB/06d763cc845d205ed738ab0e3f1b1aecfd25ec07/guide_files/how_to_debug.gif)
 
 #### !Run Via Terminal
 
@@ -73,7 +73,7 @@ To access the interactive API documentation, make sure the app is running, and t
 ```bash 
 http://127.0.0.1:8000/docs
 ```
-![how_to_docs](https://github.com/RonRaifer/RTB/blob/06d763cc845d205ed738ab0e3f1b1aecfd25ec07/guide_files/how_to_docs.gif)
+![how_to_docs](https://raw.githubusercontent.com/RonRaifer/RTB/06d763cc845d205ed738ab0e3f1b1aecfd25ec07/guide_files/how_to_docs.gif)
 
 ## Further Improvements
 
