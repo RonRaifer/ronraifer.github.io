@@ -46,7 +46,7 @@ This section will guide you and explain how to run the app in each mode.
 - Now tick the 'Send' button, and review the response.
 - Example "degifted" below
 
-![how_to_debug](guide_files/how_to_debug.gif)
+![how_to_debug](https://github.com/RonRaifer/RTB/blob/06d763cc845d205ed738ab0e3f1b1aecfd25ec07/guide_files/how_to_debug.gif)
 
 #### !Run Via Terminal
 
