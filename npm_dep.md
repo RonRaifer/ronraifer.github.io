@@ -31,7 +31,7 @@ The NPM dependency analyzer uses a number of open source projects to work proper
 Clone the project or download it directly:
 ```bash
 git clone https://github.com/RonRaifer/NPM-Dep.git
-cd RTB
+cd NPM-Dep
 ```
 
 Install the dependencies, using [pip](https://pypi.org/project/pip/), via running the next command:
