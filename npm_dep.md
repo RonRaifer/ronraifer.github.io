@@ -71,6 +71,7 @@ http://127.0.0.1:8000/npmMonitor
 http://127.0.0.1:8000/retrieveDependencies/?package_name=<NAME>&version_or_tag=<VERSION>
 ```
 **Example of retrieving dependencies:**
+
 Retrieve dependencies for `express` package, with latest version:
 ```bash
 http://127.0.0.1:8000/retrieveDependencies/?package_name=express&version_or_tag=latest
