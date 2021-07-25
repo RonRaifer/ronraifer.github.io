@@ -1,6 +1,7 @@
 # NPM Dependent Packages Analyzer, Ron Raifer.
 ## _An Assignment Given By [Snyk.io](https://snyk.io/)_
 [![Snyk](https://www.pulseconferences.com/wp-content/uploads/2020/04/snyk-logo-black.png "Snyk")](http://snyk.io "Snyk")
+
 This assignment was given to me by Snyk.io, to test my capabilities.\
 I have been asked to implement a web service which retrieves dependencies of a given npm package, and serves REST API requests.\
 The application can also monitor the server, to check if it's availiable.
