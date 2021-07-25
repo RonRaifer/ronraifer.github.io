@@ -76,7 +76,6 @@ Retrieve dependencies for `express` package, with latest version:
 ```bash
 http://127.0.0.1:8000/retrieveDependencies/?package_name=express&version_or_tag=latest
 ```
-Now, you will be able to enter the desired package, and it's version, as an example:
 ![how_to_docs](https://raw.githubusercontent.com/RonRaifer/NPM-Dep/06d763cc845d205ed738ab0e3f1b1aecfd25ec07/guide_files/how_to_docs.gif)
 
 
