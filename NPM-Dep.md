@@ -79,14 +79,6 @@ http://127.0.0.1:8000/retrieveDependencies/?package_name=express&version_or_tag=
 ![how_to_address](https://raw.githubusercontent.com/RonRaifer/ronraifer.github.io/main/NPM-Dep-docs/how_to_address.gif)
 
 
-## Further Improvements
-
-#### Tests
-
-
-#### Tech
-
-
 ## Contact Info
 Mail me: ronraifer@gmail.com
 
