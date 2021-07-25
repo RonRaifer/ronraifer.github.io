@@ -23,7 +23,7 @@ The NPM dependency analyzer uses a number of open source projects to work proper
 
 ## Installation
 
-*** Note ***
+***Note***
 - This project requires [Python](https://www.python.org/) v3.6+ to run.
 - Make sure you have Redis installed and running on your machine, for more details, refer to [Redis Download](https://redis.io/download).
 
